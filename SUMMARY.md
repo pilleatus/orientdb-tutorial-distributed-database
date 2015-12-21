@@ -1,6 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* Motivation
-* Preparation 
+* [Motivation](motivation.md)
+* Preparation
 
