@@ -16,4 +16,5 @@ DDBMS (distributed database management systems) are used if a "Single DBMS" reac
 DDBMS are installed on multiple servers and provide methods for 
 to solve the above challenges. For example if the amount of requests increases, then with horizontal scalability of DDBMS the Problem can solved by adding an additional Server. With this method a quick reaction on changes is possible and the cost for an additional server is lover than to extend the existing server with better hardware.
 
-With a Multiple servers approach the processing of big data is possible. Because of the increasing significance of DDBMS this tutorial was created, to provided a better insight into this topic.   
+
+With the Multi-Master topology concept of OrientDB, processing of big data is possible. Because of the increasing significance of DDBMS this tutorial was created, to provided a better insight into this topic.   
