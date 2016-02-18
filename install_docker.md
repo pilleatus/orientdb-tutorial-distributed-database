@@ -1,6 +1,10 @@
 <img src="https://www.docker.com/sites/all/themes/docker/assets/images/logo.png" align="right" width="35%">
+With docker it is possible to package a application with all needed dependencies such as libraries, system tools... 
+In this Tutorial we will use the official OrientDB package (image) from https://hub.docker.com/r/orientdb/orientdb/
 
 # Install Docker
+To run a application with Docker you first have to install 
+     
 
 
 https://docs.docker.com/engine/installation/ubuntulinux/
