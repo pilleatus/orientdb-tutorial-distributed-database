@@ -1,5 +1,5 @@
 # Install Docker
-<img src="https://www.flickr.com/photos/xmodulo/14098888813/" align="right" width="35%">
+<img src="https://www.docker.com/sites/all/themes/docker/assets/images/logo.png" align="right" width="35%">
 
 
 https://docs.docker.com/engine/installation/ubuntulinux/
