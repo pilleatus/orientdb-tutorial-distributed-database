@@ -9,7 +9,7 @@
 * [Customer Example](customer_example.md)
    * [Setup DB Configurations](setup_db_configurations.md)
    * [Access DB with Java](access_db_with_java.md)
-   * Fill Database with Customers
+   * [Fill Database with Customers](fill_database_with_customers.md)
    * Tests
 * [Conclusion](conclusion.md)
 
