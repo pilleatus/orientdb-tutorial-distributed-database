@@ -10,7 +10,7 @@ DDBMS (distributed database management systems) are used if a "Single DBMS" reac
 
 1. The volume of data is to big, so it can't stored on a single DBMS 
 1. The DBMS can't process the big size of user requests in an acceptable time.
-1. availability and redundancy of data
+1. Due to the availability and redundancy of the data
 
 
 
