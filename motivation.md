@@ -4,8 +4,7 @@
 
 In today's world processing of Big data takes an important role.
 
-
-To manage and save the data you need more than a single Database. For this reason distributed databases have been developed.
+For managing and storing this big amount of data is more than a single database necessary. Due to this reason, distributed databases have been developed.
 DDBMS (distributed database management systems) are used if a "Single DBMS" reaches its limits. Reasons for this are:
 
 
