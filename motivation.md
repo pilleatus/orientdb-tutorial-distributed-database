@@ -2,10 +2,10 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Social_Network_Analysis_Visualization.png" align="right" width="35%">
 
 
-In today's world processing of Big-Data takes an important role.
+In today's world processing of Big data takes an important role.
 
 
-To manage and save the data you need more than a single Database. For this reason distributed databases were developed.
+To manage and save the data you need more than a single Database. For this reason distributed databases have been developed.
 DDBMS (distributed database management systems) are used if a "Single DBMS" reaches its limits. Reasons for this are:
 
 
