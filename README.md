@@ -1,4 +1,4 @@
-# orientdb-tutorial-distributed-database
+# Introduction
 
 In this Tutorial we will setup a Distributed Database with Docker Containers. OrientDB distributed concept is a Multi-Master topology. We will split of a class in three logical clusters and store each cluster on two Servers. In this way we improve the reliability and the scalability of our system.
 
