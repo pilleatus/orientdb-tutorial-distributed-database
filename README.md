@@ -19,4 +19,4 @@ Sharding
 
 Multiple servers per cluster
 
-This Tutorial was made with Ubuntu 14.04 & 15.04
+This Tutorial was made with Ubuntu 14.04
