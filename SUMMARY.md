@@ -9,5 +9,6 @@
 * [Customer Example](customer_example.md)
    * [Setup DB Configurations](setup_db_configurations.md)
    * Access DB with Java
+   * Fill Database with Customers
 * [Conclusion](conclusion.md)
 
