@@ -9,10 +9,7 @@ In today's world processing of Big-Data takes an important role.
 To manage and save the data you need more than a single Database. For this reason distributed databases were developed.
 DDBMS (distributed database management systems) are used if a "Single DBMS" reaches its limits. Reasons for this are:
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Social_Network_Analysis_Visualization.png" aligne="right" width="30%">
-
-![test](https://upload.wikimedia.org/wikipedia/commons/9/9b/Social_Network_Analysis_Visualization.png)
-
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Social_Network_Analysis_Visualization.png" aligne="right">
 
 
 1. The volume of data is to big 
