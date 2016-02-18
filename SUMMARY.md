@@ -10,5 +10,6 @@
    * [Setup DB Configurations](setup_db_configurations.md)
    * Access DB with Java
    * Fill Database with Customers
+   * Tests
 * [Conclusion](conclusion.md)
 
