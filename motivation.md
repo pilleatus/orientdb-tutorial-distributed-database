@@ -14,38 +14,6 @@ DDBMS (distributed database management systems) are used if a "Single DBMS" reac
 
 
 DDBMS are installed on multiple servers and supports methods for 
+to solve the above challenges. For example if the amount of requests increases, then with horizontal scalability of DDBMS the Problem can solved by adding an additional Server. With this method a quick reaction on changes is possible. The cost for an additional server is lover than to extend the existing server with better hardware.
 
-und unterstützen mehrere methoden um die 
-
-
-If the amount of requests increases, then with Horizontal Scalability of DDBMS by adding an additional Server can be quick responding to changes. 
-
-have the advantage  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-horizontal skalierbar auf änderungen reagieren 
-multimalster
-redundace
-
-
-
-
-Der vorteil von VerDBMS liegt in dyn skalierung
-
-
+With a Multiple servers approach the processing is possible. 
