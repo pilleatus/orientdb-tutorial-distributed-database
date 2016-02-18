@@ -6,6 +6,6 @@
    * [Operating System](operating_system.md)
    * [Install Docker](install_docker.md)
    * [Install Database](install_database.md)
-* Customer Example
+* [Customer Example](customer_example.md)
 * [Conclusion](conclusion.md)
 
