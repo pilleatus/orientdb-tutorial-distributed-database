@@ -13,7 +13,7 @@ DDBMS (distributed database management systems) are used if a "Single-DBMS" reac
 1. limitation of access (answer time)
 1. availability and redundancy of data
 
-Databases witch are installed on multiple servers. 
+DDBMS are installed on multiple servers and 
 
 
 If the amount of requests increases, then with Horizontal Scalability of DDBMS by adding an additional Server can be quick responding to changes. 
