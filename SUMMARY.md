@@ -7,6 +7,6 @@
    * [Install Docker](install_docker.md)
    * [Install Database](install_database.md)
 * [Customer Example](customer_example.md)
-   * Setup DB Configurations
+   * [Setup DB Configurations](setup_db_configurations.md)
 * [Conclusion](conclusion.md)
 
