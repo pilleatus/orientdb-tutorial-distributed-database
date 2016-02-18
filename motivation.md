@@ -1,5 +1,5 @@
 # Motivation
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Social_Network_Analysis_Visualization.png" align="right" width="35%">
+<a title="By Martin Grandjean [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3ASocial_Network_Analysis_Visualization.png"><img align="left" width="35%" alt="Social Network Analysis Visualization" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Social_Network_Analysis_Visualization.png/512px-Social_Network_Analysis_Visualization.png"></a>
 
 In today's world processing of Big data takes an important role.
 
