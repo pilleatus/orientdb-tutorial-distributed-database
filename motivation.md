@@ -11,6 +11,10 @@ DDBMS (distributed database management systems) are used if a "Single DBMS" reac
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Social_Network_Analysis_Visualization.png" aligne="right" width="30%">
 
+![test](https://upload.wikimedia.org/wikipedia/commons/9/9b/Social_Network_Analysis_Visualization.png)
+
+
+
 1. The volume of data is to big 
 1. limitation of access (answer time)
 1. availability and redundancy of data
