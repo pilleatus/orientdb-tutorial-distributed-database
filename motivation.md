@@ -8,8 +8,8 @@ For managing and storing this big amount of data is more than a single database 
 DDBMS (distributed database management systems) are used if a "Single DBMS" reaches its limits. Reasons for this are:
 
 
-1. The volume of data is to big 
-1. limitation of access (answer time)
+1. The volume of data is to big, so it can't stored on a single DBMS 
+1. The DBMS can't process the big siz of user requests in an acceptable time.
 1. availability and redundancy of data
 
 
