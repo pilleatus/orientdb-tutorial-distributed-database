@@ -1,3 +1,5 @@
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Social_Network_Analysis_Visualization.png" aligne="left"width="30%">
+
 # Motivation
 
 
