@@ -5,6 +5,6 @@
 * [Preparation](preparation.md)
    * [Operating System](operating_system.md)
    * [Install Docker](install_docker.md)
-   * Setup Database
+   * [Setup Database](setup_database.md)
 * [Conclusion](conclusion.md)
 
