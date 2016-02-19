@@ -30,6 +30,7 @@
     private member ID and Name
     generate getter and setter
     @Override toString()
+    @Override equals
 
 1. 
 1. 
