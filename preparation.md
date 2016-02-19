@@ -14,6 +14,4 @@ Otherwise its maybe easier to install a virtual Linux System with for example Vi
 
 ##install Eclipse
 
-The programming part of this tutorial is wrote in the programming language Java.  
-
-<p><a href="https://de.wikipedia.org/wiki/Datei:Eclipse-Luna-Logo.svg#/media/File:Eclipse-Luna-Logo.svg"><img src="https://upload.wikimedia.org/wikipedia/de/d/d0/Eclipse-Luna-Logo.svg" alt="Eclipse-Luna-Logo.svg" height="51" width="220">
+The programming part of this tutorial is wrote in the programming language Java in combination with the integrated development environment (IDE). You can download Eclipse from here: https://www.eclipse.org/downloads/
