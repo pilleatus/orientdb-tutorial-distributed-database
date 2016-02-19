@@ -15,6 +15,8 @@
         * 
         * 
     
+    http://orientdb.com/docs/2.0/orientdb.wiki/Object-Database.html
+    
     finish
 
 1. add new class main and customer
