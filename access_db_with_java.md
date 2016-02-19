@@ -26,6 +26,10 @@
     scr -> new -> class 
     Name : Customer 
     Package : main
+    
+    private member ID and Name
+    generate getter and setter
+    
 
 1. 
 1. 
