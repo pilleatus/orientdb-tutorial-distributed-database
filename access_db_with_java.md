@@ -20,7 +20,8 @@
 1. add new class main and customer
 
     scr -> new -> class 
-    name : maine
+    name : main
+    package : main
 
 1. 
 1. 
