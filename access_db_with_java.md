@@ -5,6 +5,17 @@
 
 Project name: orientdb-tutorial-distributed-database
 
+Libraries Ass External JARs -> OrientdbJars
+
+./oriendb/lib/ :
+* 
+* 
+* 
+* 
+
+
+
+
 
 
 1. 
