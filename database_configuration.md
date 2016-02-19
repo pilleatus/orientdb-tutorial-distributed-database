@@ -11,5 +11,10 @@ docker run --name db_server_usa orientdb/orientdb
 
 
 
+```
+docker exec -it db_server_usa bash
+```
+
+
 
 
