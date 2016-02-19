@@ -3,7 +3,6 @@
 * [Introduction](README.md)
 * [Motivation](motivation.md)
 * [Preparation](preparation.md)
-   * [Operating System](operating_system.md)
    * [Install Docker](install_docker.md)
 * [Customer Example](customer_example.md)
    * [Database Configuration](database_configuration.md)
