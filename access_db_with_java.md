@@ -29,7 +29,7 @@
     
     private member ID and Name
     generate getter and setter
-    
+    @Override toString()
 
 1. 
 1. 
