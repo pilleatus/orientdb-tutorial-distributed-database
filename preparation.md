@@ -16,9 +16,4 @@ Otherwise its maybe easier to install a virtual Linux System with for example Vi
 
 The programming part of this tutorial is wrote in the programming language Java.  
 
-2016 The Eclipse Foundation
-
-https://eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-426x100.png 
-
-
-<p><a href="https://de.wikipedia.org/wiki/Datei:Eclipse-Luna-Logo.svg#/media/File:Eclipse-Luna-Logo.svg"><img src="https://upload.wikimedia.org/wikipedia/de/thumb/d/d0/Eclipse-Luna-Logo.svg/1200px-Eclipse-Luna-Logo.svg.png" alt="Eclipse-Luna-Logo.svg"></a><br>Von Eclipse Foundation - <a rel="nofollow" class="external free" href="http://www.eclipse.org/artwork/">http://www.eclipse.org/artwork/</a>, <a href="//de.wikipedia.org/wiki/Datei:Eclipse-Luna-Logo.svg" title="Logo, das dem Marken- oder Namensrecht unterliegt">Logo</a>, https://de.wikipedia.org/w/index.php?curid=8310082</p>
+<p><a href="https://de.wikipedia.org/wiki/Datei:Eclipse-Luna-Logo.svg#/media/File:Eclipse-Luna-Logo.svg"><img src="https://upload.wikimedia.org/wikipedia/de/d/d0/Eclipse-Luna-Logo.svg" alt="Eclipse-Luna-Logo.svg" height="51" width="220">
