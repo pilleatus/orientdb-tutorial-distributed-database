@@ -12,3 +12,6 @@ If you have time to experiment or if you need this application running on Window
 Otherwise its maybe easier to install a virtual Linux System with for example Virtualbox and use it for the tutorial.
 
 ##install Eclipse
+
+The programming part of this tutorial is wrote in the programming language Java.  
+ 
