@@ -14,4 +14,4 @@ Otherwise its maybe easier to install a virtual Linux System with for example Vi
 
 ##install Eclipse
 
-The programming part of this tutorial is wrote in the programming language Java in combination with the integrated development environment (IDE) Eclipse. You can download Eclipse from here: https://www.eclipse.org/downloads/
+The programming part of this tutorial is wrote in the programming language Java in combination with the integrated development environment (IDE) Eclipse. You can download the developer package for Java here: https://www.eclipse.org/downloads/
