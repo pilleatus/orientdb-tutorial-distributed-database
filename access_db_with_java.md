@@ -20,8 +20,12 @@
 1. add new class main and customer
 
     scr -> new -> class 
-    name : main
-    package : main
+    Name : Main
+    Package : main
+    
+    scr -> new -> class 
+    Name : Customer 
+    Package : main
 
 1. 
 1. 
