@@ -9,7 +9,7 @@ DDBMS (distributed database management systems) are used if a "Single DBMS" reac
 
 1. The volume of data is to big, so it can't stored on a single DBMS 
 1. The DBMS can't process the big size of user requests in an acceptable time.
-1. Warranty for availability and redundancy of the data is not given on a single system 
+1. Warranty for availability and redundancy of the data are not given on a single system 
 
 
 DDBMS are installed on multiple servers and provide methods to solve the above challenges. For example if the amount of requests increases, then with horizontal scalability of DDBMS the problem can solved by adding an additional server. With this method a quick reaction on changes is possible and the cost for an additional server is lower than to extend the existing server with better hardware.
