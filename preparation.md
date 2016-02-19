@@ -3,7 +3,7 @@ For our implementation we need some software components. The Authors of this boo
 
 ##install Docker
 <img src="https://www.docker.com/sites/all/themes/docker/assets/images/logo.png" align="right" width="35%">
-With docker it is possible to package a application with all needed dependencies and upload it to a server. If you will use such a application you can just download it and start it.
+With docker it is possible to package a application with all needed dependencies and upload it to a server. If you will use such a application you can just download and start it.
 To run a application with Docker you first have to install the Docker-Deamon. Meanwhile there are additional tools for managing docker applications. But they are not necessary for this Tutorial. When you are a Linux user just follow the steps on:
 https://docs.docker.com/engine/installation
 
