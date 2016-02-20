@@ -19,7 +19,6 @@ In chapter we will made a Java-Object-Project. There will be classes like Custom
         orientdb-object-*.jar   
         orientdb-client-*.jar
         orientdb-enterprise-*.jar    
-        
     
     finish
 
