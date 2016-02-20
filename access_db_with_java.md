@@ -12,14 +12,14 @@ In chapter we will made a Java-Object-Project. There will be classes like Custom
     next
     
     Libraries Ass External JARs -> OrientdbJars
-    
+    http://orientdb.com/docs/2.0/orientdb.wiki/Object-Database.html
+
     ./oriendb/lib/ :
         orientdb-core-*.jar
         orientdb-object-*.jar   
         orientdb-client-*.jar
         orientdb-enterprise-*.jar    
         
-http://orientdb.com/docs/2.0/orientdb.wiki/Object-Database.html
     
     finish
 
