@@ -4,7 +4,6 @@ These structure is similar to the example in the official OrientDB docs. Instead
 To decrease the risk for a data lost, well will store each cluster on a second server.
 
 
-!!!!! costumer != customer 
 
 ![Figure 1-1](https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/images/schema.png?raw=true)
 
