@@ -6,7 +6,6 @@ https://hub.docker.com/r/orientdb/orientdb/
 
 ###1. Create a container with a volume
 First of all we will create a container with the volume \config. When you start a Docker Container, the changes on this container getting lost when you stop it afterwards. With Volumes you can specify a directory or files, an save them persistent on your filesystem. with the following command we create such an volume for storing the configuration for the DDBMS.
-
 ```
 docker create -v /config --name db_server_config orientdb/orientdb /bin/true 
 ```
