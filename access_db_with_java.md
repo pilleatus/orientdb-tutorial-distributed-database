@@ -1,5 +1,9 @@
 # Access DB with Java
 
+In chapter we will made a Java-Object-Project. There will be Classes like Customer and methods to access, write and read the database. 
+
+
+
 1. Start Eclipse
 1. File -> New -> Project -> Java Project
 
@@ -10,12 +14,12 @@
     Libraries Ass External JARs -> OrientdbJars
     
     ./oriendb/lib/ :
-        *  
-        * 
-        * 
-        * 
-    
-    http://orientdb.com/docs/2.0/orientdb.wiki/Object-Database.html
+        orientdb-core-*.jar
+        orientdb-object-*.jar   
+        orientdb-client-*.jar
+        orientdb-enterprise-*.jar    
+        
+http://orientdb.com/docs/2.0/orientdb.wiki/Object-Database.html
     
     finish
 
