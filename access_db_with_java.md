@@ -1,6 +1,6 @@
 # Access DB with Java
 
-In chapter we will made a Java-Object-Project. There will be Classes like Customer and methods to access, write and read the database. 
+In chapter we will made a Java-Object-Project. There will be classes like Customer and methods to access, write and read the database. 
 
 
 
