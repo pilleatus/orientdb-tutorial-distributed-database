@@ -20,7 +20,7 @@ Now can we start our created container by:
     docker start db_server_config /bin/bash
 
 It is not necessary to start the db-server at the moment, we just take a simple application like /bin/bash for keeping the container running.  
-In the next step can make a terminal connection to the container and install a text-editor to modifie the config files. If you are more familiar with nano, install it. If you're 
+In the next step can make a terminal connection to the container and install a text-editor to modifie the config files. If you are more familiar with nano, install it instead. 
     
     docker exec -it db_server_config bash
     apt-get update
