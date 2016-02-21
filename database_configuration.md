@@ -33,7 +33,7 @@ In the first terminal we can now open the config file for our schema.
     
     vim /orientdb/config/default-distributed-db-config.json
     
-and instert:
+and insert:
 
 ```json
 {
