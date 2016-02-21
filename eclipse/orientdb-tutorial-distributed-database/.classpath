@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="/home/micha/eclipse_workspace/orient/orientdb-community-2.1.4/lib/orientdb-object-2.1.4.jar"/>
+	<classpathentry kind="lib" path="/home/micha/eclipse_workspace/orient/orientdb-community-2.1.4/lib/orientdb-enterprise-2.1.4.jar"/>
+	<classpathentry kind="lib" path="/home/micha/eclipse_workspace/orient/orientdb-community-2.1.4/lib/orientdb-core-2.1.4.jar"/>
+	<classpathentry kind="lib" path="/home/micha/eclipse_workspace/orient/orientdb-community-2.1.4/lib/orientdb-client-2.1.4.jar"/>
+	<classpathentry kind="lib" path="/home/micha/eclipse_workspace/orient/orientdb-community-2.1.4/lib/concurrentlinkedhashmap-lru-1.4.1.jar"/>
+	<classpathentry kind="lib" path="/home/micha/eclipse_workspace/orient/orientdb-community-2.1.4/lib/javassist-3.16.1-GA.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
