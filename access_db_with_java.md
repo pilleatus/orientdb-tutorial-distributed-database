@@ -24,10 +24,8 @@ In chapter we will made a Java-Object-Project. There will be classes like Custom
         orientdb-enterprise-*.jar    
         concurrentlinkedhashmap-*.jar
         javassist*.jar
-        
-    finish
 
-1. add new class main and customer
+1. Add new classes *Main*, *Manager* and *Customer* to project
 
     scr -> new -> class 
     Name : Main
