@@ -32,6 +32,10 @@ In chapter we will made a Java-Object-Project. There will be classes like Custom
     Package : main
     
     scr -> new -> class 
+    Name : Manager 
+    Package : main
+    
+    scr -> new -> class 
     Name : Customer 
     Package : main
     
