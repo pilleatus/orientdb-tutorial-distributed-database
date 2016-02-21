@@ -17,7 +17,7 @@ The first time when you create a orientdb/orientdb container, the deamon will do
 
 To start the first Server use the following command:
 ```
-docker run --name db_server_usa orientdb/orientdb 
+docker run --name db_server_usa orientdb/orientdb dserver.sh
 ```
 
 
