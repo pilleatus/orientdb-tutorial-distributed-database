@@ -11,10 +11,16 @@ In chapter we will made a Java-Object-Project. There will be classes like Custom
     
     next
     
-    Libraries Ass External JARs -> OrientdbJars
-    http://orientdb.com/docs/2.0/orientdb.wiki/Object-Database.html
+3. Add external JARs
+
+    For the communication whith the database we need some external JARs from orientdb.
+    This is also explained here:     http://orientdb.com/docs/2.0/orientdb.wiki/Object-Database.html
+    
+    For our example inport those libs from external orientdb folder:
 
     ./oriendb/lib/ :
+    
+    
         orientdb-core-*.jar
         orientdb-object-*.jar   
         orientdb-client-*.jar
