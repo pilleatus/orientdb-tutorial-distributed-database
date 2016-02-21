@@ -18,12 +18,14 @@ In chapter we will made a Java-Object-Project. There will be classes like Custom
 
     *./oriendb/lib/* :
     
-        orientdb-core-*.jar
-        orientdb-object-*.jar   
-        orientdb-client-*.jar
-        orientdb-enterprise-*.jar    
-        concurrentlinkedhashmap-*.jar
-        javassist*.jar
+    ```
+    orientdb-core-*.jar
+    orientdb-object-*.jar   
+    orientdb-client-*.jar
+    orientdb-enterprise-*.jar    
+    concurrentlinkedhashmap-*.jar
+    javassist*.jar
+    ```
 
 1. Add new classes *Main*, *Manager* and *Customer* to project
 
