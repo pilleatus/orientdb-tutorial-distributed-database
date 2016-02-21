@@ -85,10 +85,10 @@ some other useful docker commands:
 
     docker ps                               #list all running containers
     docker stop $(docker ps -a -q)          #stop all containers
-    docker rm $(docker ps -a -q)            #remova all containers
-
+   
 cleaning up everything:
-
+    
+    docker rm $(docker ps -a -q)            #remova all containers
     docker images                           #list all images
     docker rmi <id>                         #remove image by id
     docker rmi $(docker images -q)          #remove all images
