@@ -30,6 +30,10 @@ Whit this commit the text-editor is already installed, when you start this conta
 
 ###2. Modifie the orientDB config
 In the first terminal we can now open the config file for our schema.
+    
+    vim /orientdb/config/default-distributed-db-config.json
+    
+and instert:
 
 ```json
 {
@@ -61,9 +65,8 @@ In the first terminal we can now open the config file for our schema.
 
 ```
 
-    vim 
-You already should have this terminal connection to the container. Open the 
-To start the first Server use the following command:
+###3. Start the Servers
+
 ```
 docker run --name db_server_usa orientdb/orientdb dserver.sh
 ```
