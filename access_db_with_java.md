@@ -7,7 +7,7 @@ In chapter we will made a Java-Object-Project. There will be classes like Custom
 1. Start Eclipse
 1. File -> New -> Project -> Java Project
 
-    Project name: orientdb-tutorial-distributed-database
+    Projectname: *orientdb-tutorial-distributed-database*
     
 1. Add external JARs
 
@@ -16,7 +16,7 @@ In chapter we will made a Java-Object-Project. There will be classes like Custom
     
     For our example import those libraries from external orientdb folder:
 
-    ./oriendb/lib/ :
+    *./oriendb/lib/* :
     
         orientdb-core-*.jar
         orientdb-object-*.jar   
@@ -28,15 +28,15 @@ In chapter we will made a Java-Object-Project. There will be classes like Custom
 1. Add new classes *Main*, *Manager* and *Customer* to project
 
     scr -> new -> class 
-    Name : Main
+    Name : *Main*
     Package : main
     
     scr -> new -> class 
-    Name : Manager 
+    Name : *Manager* 
     Package : main
     
     scr -> new -> class 
-    Name : Customer 
+    Name : *Customer* 
     Package : main
     
     private member ID and Name
