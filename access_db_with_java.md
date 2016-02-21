@@ -51,4 +51,4 @@ In chapter we will made a Java-Object-Project. There will be classes like Custom
 1. 
 
 
-secreenshot from projejt explorere
+screen-shots from project explorer
