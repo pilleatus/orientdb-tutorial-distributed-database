@@ -19,7 +19,9 @@ In chapter we will made a Java-Object-Project. There will be classes like Custom
         orientdb-object-*.jar   
         orientdb-client-*.jar
         orientdb-enterprise-*.jar    
-    
+        concurrentlinkedhashmap-*.jar
+        javassist*.jar
+        
     finish
 
 1. add new class main and customer
