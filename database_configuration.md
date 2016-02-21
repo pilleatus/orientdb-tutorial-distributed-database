@@ -14,19 +14,23 @@ https://docs.docker.com/engine/userguide/containers/dockervolumes/
 With the name flag the container name will be specified. And the last term of the command is to set an application running on the container. We will use this container only to set the configuration. Therefor we use the /bin/true.
 The first time when you create a orientdb/orientdb container, the deamon will download all necessary under-laying images.
 
-###2. modifie the orientDB config
+###2. Install a texteditor in the container 
 Now can we start our created container by:
 
     docker start db_server_config /bin/bash
 
 It is not necessary to start the db-server at the moment, we just take a simple application like /bin/bash for keeping the container running.  
-In the next step can make a terminal connection to the container and install a text-editor to modifie the config files. If you are more familiar with nano, install it instead. 
+In the next step we can make a terminal connection to the container and install a text-editor to modifie the config files. If you are more familiar with nano, install it instead. 
     
     docker exec -it db_server_config bash
     apt-get update
     apt-get install vim
 
+If the installation process was successfull, you can commit your changes on the container. Therefore open a other terminal and call:
 
+    docker commit db_server_config
+
+###2. Modifie the orientDB config
 To start the first Server use the following command:
 ```
 docker run --name db_server_usa orientdb/orientdb dserver.sh
