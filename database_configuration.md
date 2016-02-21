@@ -66,16 +66,36 @@ and instert:
 ```
 
 ###3. Start the Servers
-
+This is an example to start the usa server. Just open an other terminal with:
 ```
-docker run --name db_server_usa orientdb/orientdb dserver.sh
+docker run --name usa --volumes-from db_server_config -it orientdb/orientdb dserver.sh
 ```
+setup password and set the name for the server usa
 
 
+when you are done you can commit the settings with
 
-```
-docker exec -it db_server_usa bash
-```
+    docker commit usa
+    
+next time you can start the server with 
+
+    docker start usa
+    
+some other useful docker commands:
+
+    docker ps                               #list all running containers
+    docker stop $(docker ps -a -q)          #stop all containers
+    docker rm $(docker ps -a -q)            #remova all containers
+
+cleaning up everything:
+
+    docker images                           #list all images
+    docker rmi <id>                         #remove image by id
+    docker rmi $(docker images -q)          #remove all images
+    
+    docker volume rm $(docker volume ls -q) #remove all volumes
+
+
 
 
 
