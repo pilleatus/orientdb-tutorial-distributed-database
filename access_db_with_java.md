@@ -9,9 +9,7 @@ In chapter we will made a Java-Object-Project. There will be classes like Custom
 
     Project name: orientdb-tutorial-distributed-database
     
-    next
-    
-3. Add external JARs
+1. Add external JARs
 
     For the communication whith the database we need some external JARs from orientdb.
     This is also explained here:     http://orientdb.com/docs/2.0/orientdb.wiki/Object-Database.html
