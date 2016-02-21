@@ -52,6 +52,8 @@ First of all we have to create a new Java project.
     @Override toString()
     @Override equals
 
+get ips from docker "docker network inspect bridge"
+
 1. 
 1. 
 1. 
