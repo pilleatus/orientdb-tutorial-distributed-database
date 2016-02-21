@@ -25,9 +25,43 @@ If you are more familiar with the text-editor nano, install it instead.
 If the installation process was successfull, you can commit your changes on the container. Therefore open a other terminal and call:
 
     docker commit db_server_config
+    
+Whit this commit the text-editor is already installed, when you start this container next time.
 
 ###2. Modifie the orientDB config
-In the first terminal we can now open 
+In the first terminal we can now open the config file for our schema.
+
+```json
+{
+  "autoDeploy": true,
+  "hotAlignment": false,
+  "readQuorum": 1,
+  "writeQuorum": 2,
+  "failureAvailableNodesLessQuorum": false,
+  "readYourWrites": true,
+  "clusters": {
+    "internal": {
+    },
+    "index": {
+    },
+    "customer_usa": {
+      "servers" : [ "usa", "china" ]
+    },
+    "customer_europe": {
+      "servers" : [ "europe", "usa" ]
+    },
+    "customer_china": {
+      "servers" : [ "china", "europe" ]
+    },
+    "*": {
+      "servers" : [ "<NEW_NODE>" ]
+    }
+  }
+}
+
+```
+
+    vim 
 You already should have this terminal connection to the container. Open the 
 To start the first Server use the following command:
 ```
