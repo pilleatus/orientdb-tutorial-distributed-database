@@ -1,6 +1,11 @@
 # Access DB with Java
 
-For the customer example we will made a Java-Object-Project. There will be classes like Customer and methods to access, write and read the database. 
+In this chapter we will access the database from Eclipse via Java. 
+The customer example is a Java-Object-Project, so we have to use the  Object-API from OrientDB:
+
+http://orientdb.com/docs/last/Object-Database.html
+
+In For the customer example we will made a Java-Object-Project. There will be classes like Customer and methods to access, write and read the database. 
 First of all we have to create a new Java project.  
 
 
