@@ -12,7 +12,7 @@ blablbl
     
 bllal
 
-    docker run --name usa --volumes-from db_server_config -it orientdb/costumer_example:1.0 dserver.sh
+    docker run --name usa -it orientdb/costumer_example:1.0 dserver.sh
 
 At this point you should have already installed the docker deamon and you may have already checked the installation with the `docker run hello_world` command.
 For the database-instances we will use the official OrientDB package from 
