@@ -6,7 +6,7 @@ On the OrientDB Manual Sites are already the basics good explained, to understan
 http://orientdb.com/docs/2.0/orientdb.wiki/Distributed-Architecture.html   
 In this Tutorial we will make an implementation of the example in the doc's. 
 
-<img src="http://www.orientdb.org/images/distributed-sharding-replica-class.png">
+![Figure 1-1](https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/schema.png?raw=true)
 
 This may helps you to understand and test the capabilities and the limits of such a distributed Database.
 
