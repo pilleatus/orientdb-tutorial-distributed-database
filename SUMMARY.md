@@ -1,7 +1,5 @@
 # Summary
 
-* [Introduction](Introduction)
-* [Introduction](.readme.md/Introduction)
 * [Introduction](gitbook/README.md)
 * [Motivation](gitbook/motivation.md)
 * [Preparation](gitbook/preparation.md)
