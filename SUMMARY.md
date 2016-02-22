@@ -1,6 +1,7 @@
 # Summary
 
-* [Introduction](removeme.md)
+* [Introduction](README.md)
+* [Introduction](.removememd.md/removememd.md)
 * [Introduction](gitbook/README.md)
 * [Motivation](gitbook/motivation.md)
 * [Preparation](gitbook/preparation.md)
