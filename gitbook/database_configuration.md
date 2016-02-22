@@ -46,6 +46,30 @@ In this file you can define, where the clusters will be stored.
 }
 ```
 
+With the following commands we create our new image. Navigate to the docker folder in the repository
+
+    cd docker
+    
+And start building the image with:
+
+    docker build -t orientdb/costumer_example:1.0 .
+    
+With this command we defined a the name as `orientdb/costumer_example` and the version `1.0` the last argument defines where docker searches for a Dockerfile
+
+###2. Create and start (run command) some servers
+With the next instruction we run a docker container with the name `usa` using our previously created image. When the server is started you have to choose password for the root user and enter the name for the server, for our first container `usa`. 
+
+    docker run --name usa -it -v /orientdb/config  orientdb/costumer_example:1.0 dserver.sh
+
+The `-it` flags allocate a pseudo-TTY connection to the container.  
+The `-v /orientdb/config` defines a volume for the corresponding directory. When you start a Docker Container, the changes on this container getting lost when you stop it afterwards without committing your changes. With Volumes you can specify a directory or files and save them persistent on your file-system. Through that we have to settup our poassword 
+    
+
+
+
+    
+    
+
 
 
 
@@ -61,7 +85,7 @@ bllal
   
 
 ###1. Create and run a container with a volume
-First of all we will create a container with a volume. When you start a Docker Container, the changes on this container getting lost when you stop it afterwards without committing your changes. With Volumes you can specify a directory or files and save them persistent on your file-system. Other containers can also include such a volume. Therefore we can use some configuration Files with multiple containers. With the following command we set the `/orientdb/config/default-distributed-db-config.json` file as an volume for storing the configuration for servers.
+First of all we will create a container with a volume.  Other containers can also include such a volume. Therefore we can use some configuration Files with multiple containers. With the following command we set the `/orientdb/config/default-distributed-db-config.json` file as an volume for storing the configuration for servers.
 For more information take a look at:
 https://docs.docker.com/engine/userguide/containers/dockervolumes/
     
