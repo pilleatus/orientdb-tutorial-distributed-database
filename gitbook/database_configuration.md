@@ -62,7 +62,7 @@ With the next instruction we run a docker container with the name `usa` using ou
     docker run --name usa -it -v /orientdb/config  orientdb/costumer_example:1.0 dserver.sh
 
 The `-it` flags allocate a pseudo-TTY connection to the container.  
-The `-v /orientdb/config` defines a volume for the corresponding directory. When you start a Docker Container, the changes on this container getting lost when you stop it afterwards without committing your changes. With Volumes you can specify a directory or files and save them persistent on your file-system. Through that we have to settup our poassword 
+The `-v /orientdb/config` defines a volume for the corresponding directory. When you start a Docker Container, the changes on this container getting lost when you stop it afterwards without committing your changes. With Volumes you can specify a directory and save them persistent on your file-system. Through that we have to settup our poassword 
     
 
 
