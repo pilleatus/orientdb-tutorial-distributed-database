@@ -1,0 +1,26 @@
+{
+  "autoDeploy": true,
+  "hotAlignment": false,
+  "readQuorum": 1,
+  "writeQuorum": 2,
+  "failureAvailableNodesLessQuorum": false,
+  "readYourWrites": true,
+  "clusters": {
+    "internal": {
+    },
+    "index": {
+    },
+    "customer_usa": {
+      "servers" : [ "usa", "china" ]
+    },
+    "customer_europe": {
+      "servers" : [ "europe", "usa" ]
+    },
+    "customer_china": {
+      "servers" : [ "china", "europe" ]
+    },
+    "*": {
+      "servers" : [ "<NEW_NODE>" ]
+    }
+  }
+}
