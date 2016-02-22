@@ -5,6 +5,10 @@
     FROM orientdb/orientdb:2.1.5
     COPY ./default-distributed-db-config.json /orientdb/config/default-distributed-db-config.json
     
+    
+blablbl
+    
+    docker build -t orientdb/costumer_example:1.0 .
 
 At this point you should have already installed the docker deamon and you may have already checked the installation with the `docker run hello_world` command.
 For the database-instances we will use the official OrientDB package from 
