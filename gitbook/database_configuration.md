@@ -1,7 +1,11 @@
 # Database Configuration
+At this point you should have already installed the docker deamon and you may have already checked the installation with the `docker run hello_world` command.
+For the database-instances we will use the official OrientDB package from 
+https://hub.docker.com/r/orientdb/orientdb/    
 
+###1. Create an image with the configuration for the servers
 
-#Dockerfile:
+###Dockerfile:
 
     FROM orientdb/orientdb:2.1.5
     COPY ./default-distributed-db-config.json /orientdb/config/default-distributed-db-config.json
@@ -14,9 +18,7 @@ bllal
 
     docker run --name usa -v /orientdb/config -it orientdb/costumer_example:1.0 dserver.sh
 
-At this point you should have already installed the docker deamon and you may have already checked the installation with the `docker run hello_world` command.
-For the database-instances we will use the official OrientDB package from 
-https://hub.docker.com/r/orientdb/orientdb/  
+  
 
 ###1. Create and run a container with a volume
 First of all we will create a container with a volume. When you start a Docker Container, the changes on this container getting lost when you stop it afterwards without committing your changes. With Volumes you can specify a directory or files and save them persistent on your file-system. Other containers can also include such a volume. Therefore we can use some configuration Files with multiple containers. With the following command we set the `/orientdb/config/default-distributed-db-config.json` file as an volume for storing the configuration for servers.
