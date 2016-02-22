@@ -5,6 +5,6 @@ To decrease the risk for a data lost, well will store each cluster on a second s
 
 
 
-![Figure 1-1](https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/images/schema.png?raw=true)
+![Figure 1-1](https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/schema.png?raw=true)
 
  
