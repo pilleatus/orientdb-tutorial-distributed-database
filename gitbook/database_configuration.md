@@ -4,13 +4,51 @@ For the database-instances we will use the official OrientDB package from
 https://hub.docker.com/r/orientdb/orientdb/    
 
 ###1. Create an image with the configuration for the servers
+First of all we will create an image for a DDBMS-Server. Later it is possible to create some instances with the generated image to setup up our servers.  
+To make a new Image with some changes, you can use a Dockerfile. We already added the following dockerfile to the repository:
 
-
-
-###Dockerfile:
+####Dockerfile:
 
     FROM orientdb/orientdb:2.1.5
     COPY ./default-distributed-db-config.json /orientdb/config/default-distributed-db-config.json
+    
+The first Line defines the under-laying image. The second command overwrites the configuration for our distributed system.
+
+####default-distributed-db-config.json:
+In this file you can define, where the clusters will be stored.
+
+```json
+{
+  "autoDeploy": true,
+  "hotAlignment": false,
+  "readQuorum": 1,
+  "writeQuorum": 2,
+  "failureAvailableNodesLessQuorum": false,
+  "readYourWrites": true,
+  "clusters": {
+    "internal": {
+    },
+    "index": {
+    },
+    "customer_usa": {
+      "servers" : [ "usa", "china" ]
+    },
+    "customer_europe": {
+      "servers" : [ "europe", "usa" ]
+    },
+    "customer_china": {
+      "servers" : [ "china", "europe" ]
+    },
+    "*": {
+      "servers" : [ "<NEW_NODE>" ]
+    }
+  }
+}
+```
+
+
+
+
     
 blablbl
     
