@@ -1,5 +1,11 @@
 # Database Configuration
 
+#Dockerfile:
+
+    FROM orientdb/orientdb:2.1.5
+    COPY ./default-distributed-db-config.json /orientdb/config/default-distributed-db-config.json
+    
+
 At this point you should have already installed the docker deamon and you may have already checked the installation with the `docker run hello_world` command.
 For the database-instances we will use the official OrientDB package from 
 https://hub.docker.com/r/orientdb/orientdb/  
@@ -85,10 +91,10 @@ some other useful docker commands:
 
     docker ps                               #list all running containers
     docker stop $(docker ps -a -q)          #stop all containers
-    docker rm $(docker ps -a -q)            #remova all containers
-
+   
 cleaning up everything:
-
+    
+    docker rm $(docker ps -a -q)            #remova all containers
     docker images                           #list all images
     docker rmi <id>                         #remove image by id
     docker rmi $(docker images -q)          #remove all images
