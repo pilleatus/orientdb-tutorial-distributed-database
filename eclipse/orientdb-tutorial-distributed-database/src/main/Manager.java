@@ -10,7 +10,10 @@ import com.orientechnologies.orient.object.db.OObjectDatabaseTx;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.Phaser;
@@ -24,7 +27,8 @@ public class Manager {
 
 		private OObjectDatabaseTx db;
 		private BufferedReader br;
-		private Map<String,String> dockerIPs;
+		private LinkedHashMap<String,String> dockerIPs; // IP::DockerName
+		private String sCurrentIP;
 	
 		void startLoop(){
 	
@@ -35,6 +39,7 @@ public class Manager {
 			System.out.println("'r' | remove");
 			System.out.println("'s' | show");
 			System.out.println("'q' | quit");
+			System.out.println("'cluster'");
 			
 			String sInput = "";
 			br = new BufferedReader(new InputStreamReader(System.in));
@@ -56,9 +61,10 @@ public class Manager {
 					case "add":			case "a": add();     	break;
 					case "remove":		case "r": remove();  	break;
 					case "show":		case "s": show();    	break;
+					case "cluster":				 cluster();		break;
 					default: System.out.println("???"); 		break;
 				}
-				System.out.println("____________________________________________________________________\nand now (c|d|a|r|s|q)?");
+				System.out.println("____________________________________________________________________\nand now (c|d|a|r|s|q|cluster)?");
 				try{
 		        	sInput = br.readLine();
 		        } catch(Exception e){}
@@ -73,23 +79,24 @@ public class Manager {
 		void connect()
 		{		
 			disconnect();
-			
 			System.out.println("###############  CONNECT  ################");
 			
-			dockerIPs = new HashMap<String,String>();
-			
-			if (System.getProperty("os.name").startsWith("Windows")) {
+			// get available docker names an IPs
+			dockerIPs = new LinkedHashMap<String,String>();
+			if (System.getProperty("os.name").startsWith("Windows")) 
+			{
 		        // includes: Windows 2000,  Windows 95, Windows 98, Windows NT, Windows Vista, Windows XP
-		    } else {
+		    } 
+			else 
+		    {
 		        // everything else
 				try {
-					// get available docker names an IPs
 					String cmdSH = 
 							"#!/bin/bash \n"+
 							"array=( $(docker ps | awk '{if(NR>1) print $NF}') ) \n"+
 							"for i in ${array[@]} \n"+
 							"do \n"+
-							"        echo ${i}'::'$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' ${i}) \n"+
+							"        echo $(docker inspect --format '{{ .NetworkSettings.IPAddress }}' ${i})'::'${i}\n"+
 							"done\n";
 							
 					String[] cmd = new String[]{"/bin/bash","-c",cmdSH};
@@ -109,37 +116,40 @@ public class Manager {
 		    	
 		    } 
 			
+			// select server
+			String sIP = "";
+			Pattern p = Pattern.compile("^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+			br = new BufferedReader(new InputStreamReader(System.in));
 
-			System.out.println("Please enter the Database-Server-IP address:  (e.g. \"172.17.0.3\")");
-
+			System.out.println("Please select Database-Server or enter IP address:  (e.g. \"172.17.0.3\")\n");
 			if(!dockerIPs.isEmpty())
 			{
 				System.out.println("Available servers from docker:");
+				int i = 0;
 				for (Map.Entry<String, String> entry : dockerIPs.entrySet())
 				{
-					System.out.println(entry.getValue()+ ":" + entry.getKey());
+					System.out.println(i+": "+entry.getKey()+ ":" + entry.getValue());
+					i++;
 				}
 			}
-			
-			String sIP = "";
-			br = new BufferedReader(new InputStreamReader(System.in));
-		    Pattern p = Pattern.compile("^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
-
-			
 			while (true) {
 				try {
 					sIP = br.readLine();
-				} catch (Exception e) {
-				}
+					
+					if(sIP.length()<3)
+					{
+						int i = Integer.parseInt(sIP);
+						sIP = dockerIPs.keySet().toArray()[i].toString();			
+					}
+					sCurrentIP=sIP;
+				} catch (Exception e) {}
 				if(sIP != null && !sIP.isEmpty() && p.matcher(sIP).find()) break;
-				System.out.println("???");
+				System.out.println("???\n");
 			}
 			
-
-			
+			//connect (create) database
 			try 
 			{
-				
 				// CREATE A SERVER ADMIN CLIENT AGAINST A REMOTE SERVER TO CHECK IF DB EXISTS				
 				OServerAdmin oSAdmin = new OServerAdmin("remote:"+sIP+"/test").connect("root","root");
 							
@@ -151,12 +161,12 @@ public class Manager {
 				}
 				oSAdmin.close();
 				
-				db = new OObjectDatabaseTx("remote:"+sIP+"/test").open("root","root");
-				
+				// open database
+				db = new OObjectDatabaseTx("remote:"+sIP+"/test").open("root","root");	
 				// REGISTER THE CLASS ONLY ONCE AFTER THE DB IS OPEN/CREATED
 				db.getEntityManager().registerEntityClass(Customer.class);
-
-				System.out.println("connect");
+				
+				System.out.println("connect to "+dockerIPs.get(sCurrentIP));
 			} 
 			catch (Exception e)
 			{
@@ -170,38 +180,44 @@ public class Manager {
 			if(db != null && !db.isClosed())
 			{
 				db.close();
-				System.out.println("##############  DISCONNECT  ##############");
+				System.out.println("disconnect from "+dockerIPs.get(sCurrentIP));
 			}
 		}
 		
 		void add()
 		{
 			if(db==null || db.isClosed()) connect();
-			
-			//System.out.println("#################  ADD   #################");
-			
-			System.out.println("How many? (empty for one)");
+						
 			int iHowMany = 1;
-			
 			br = new BufferedReader(new InputStreamReader(System.in));
-			
+
+			System.out.println("How many? (empty for one)");
 			try {
 				iHowMany =  Integer.parseInt(br.readLine()) ;
 			} catch (Exception e) {
 				iHowMany = 1;
 			}
 			
+			//Select Cluster
+			String sSelCluster = selectCluster();
+			
+			// generate random customer and add it to the database
 			for (int i = 0; i < iHowMany; i++) {
-				// generate random customer and add it to the database
-				String sR = String.valueOf(new Random().nextInt(900) + 100);
-				Customer c = new Customer("s" + sR, "n" + sR, "str" + sR,
-						"city" + sR);
-				db.save(c);
-				System.out.println(c + "    <-- added");
+				try {
+					String sR = String.valueOf(new Random().nextInt(900) + 100);
+					Customer c = new Customer("s" + sR, "n" + sR, "str" + sR, "city" + sR);
+					if(sSelCluster == null)
+					{
+						db.save(c);						
+						System.out.println(c + "    <-- added");
+					}else {
+						db.save(c,sSelCluster);
+						System.out.println(c + "    <-- added to "+sSelCluster);
+					}
+				} catch (Exception e) {
+					System.out.println(e);				
+				}
 			}
-			
-			
-			
 		}
 		
 		void remove()
@@ -221,8 +237,7 @@ public class Manager {
 						
 			for (int i = 0; i < iHowMany; i++) {
 				// get all customers from database
-				List<Customer> lstC = db.query(new OSQLSynchQuery<Customer>(
-						"select * from Customer"));
+				List<Customer> lstC = db.query(new OSQLSynchQuery<Customer>("select * from Customer"));
 				if (lstC.isEmpty()) {
 					System.out.println("No Customers in DB");
 					return;
@@ -294,6 +309,60 @@ public class Manager {
 				db.detach(c);
 				System.out.println(c);
 			}
+		}
+		
+		void cluster()
+		{
+			String sClusterName = "customer_"+dockerIPs.get(sCurrentIP);
+						
+			if(!db.getClusterNames().contains(sClusterName))
+			{
+				System.out.println("add: "+sClusterName);
+				db.addCluster(sClusterName,Customer.class);	
+				db.query(new OSQLSynchQuery<Customer>("ALTER CLASS Customer ADDCLUSTER "+sClusterName));
+			}	
+		}
+		
+		String selectCluster()
+		{
+			try {
+				String sSelCluster = null;
+				
+				Collection<String> lClusterNames = db.getClusterNames();
+				LinkedHashMap<Integer,String> mapCClusters = new LinkedHashMap<>();
+				
+				System.out.println("Select clustername:");
+				int i =0;
+				for (String s : lClusterNames) {
+					if(s.contains("customer"))
+					{
+						System.out.println(i+": "+s);
+						mapCClusters.put(i,s);
+						i++;
+					}
+				}
+				
+				if(!mapCClusters.isEmpty())
+				{
+					while (sSelCluster == null) {
+						try {
+							String sLine = br.readLine();
+							int iSel = Integer.parseInt(sLine);
+							sSelCluster = mapCClusters.get(iSel);
+							System.out.println("selected cluster: "+sSelCluster);
+							break;
+						} catch (Exception e) 
+						{
+							sSelCluster = null;
+						}
+					}
+				}
+				return sSelCluster;
+			} catch (Exception e) {
+				System.out.println(e);
+				return null;
+			}
+			
 		}
 		
 }
