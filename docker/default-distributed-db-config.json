@@ -10,17 +10,17 @@
     },
     "index": {
     },
-    "customer_usa": {
-      "servers" : [ "usa", "china" ]
-    },
-    "customer_europe": {
-      "servers" : [ "europe", "usa" ]
+    "customer_eu": {
+      "servers" : [ "eu","china" ]
     },
     "customer_china": {
-      "servers" : [ "china", "europe" ]
+      "servers" : [ "china", "usa" ]
+    },
+    "customer_usa": {
+      "servers" : [ "usa", "eu" ]
     },
     "*": {
-      "servers" : [ "<NEW_NODE>" ]
+      "servers" : ["<NEW_NODE>" ]
     }
   }
 }
