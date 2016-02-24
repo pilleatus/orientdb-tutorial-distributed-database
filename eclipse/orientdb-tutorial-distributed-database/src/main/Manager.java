@@ -8,10 +8,12 @@ import com.orientechnologies.orient.client.remote.OServerAdmin;
 import com.orientechnologies.orient.core.sql.query.OSQLSynchQuery;
 import com.orientechnologies.orient.object.db.OObjectDatabaseTx;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.Phaser;
 import java.util.regex.Pattern;
 
 import javax.xml.crypto.dsig.keyinfo.KeyValue;
@@ -71,6 +73,8 @@ public class Manager {
 		void connect()
 		{		
 			disconnect();
+			
+			System.out.println("###############  CONNECT  ################");
 			
 			dockerIPs = new HashMap<String,String>();
 			
@@ -166,55 +170,118 @@ public class Manager {
 			if(db != null && !db.isClosed())
 			{
 				db.close();
-				System.out.println("disconnect");
+				System.out.println("##############  DISCONNECT  ##############");
 			}
 		}
 		
-
 		void add()
 		{
 			if(db==null || db.isClosed()) connect();
-			// generate random customer and add it to the database
-			String sR = String.valueOf(new Random().nextInt(900)+100);
-			Customer c = new Customer("s"+sR,"n"+sR,"str"+sR,"city"+sR);
-			db.save(c);
-			System.out.println(c+ "    <-- added");
+			
+			//System.out.println("#################  ADD   #################");
+			
+			System.out.println("How many? (empty for one)");
+			int iHowMany = 1;
+			
+			br = new BufferedReader(new InputStreamReader(System.in));
+			
+			try {
+				iHowMany =  Integer.parseInt(br.readLine()) ;
+			} catch (Exception e) {
+				iHowMany = 1;
+			}
+			
+			for (int i = 0; i < iHowMany; i++) {
+				// generate random customer and add it to the database
+				String sR = String.valueOf(new Random().nextInt(900) + 100);
+				Customer c = new Customer("s" + sR, "n" + sR, "str" + sR,
+						"city" + sR);
+				db.save(c);
+				System.out.println(c + "    <-- added");
+			}
+			
+			
+			
 		}
 		
 		void remove()
 		{
 			if(db==null || db.isClosed()) connect();
-			// get all customers from database
-			List<Customer> lstC = db.query(new OSQLSynchQuery<Customer>("select * from Customer"));
 			
-			if(lstC.isEmpty())
-			{
-				System.out.println("No Customers in DB");
-				return;
+			System.out.println("How many? (empty for one)");
+			int iHowMany = 1;
+			
+			br = new BufferedReader(new InputStreamReader(System.in));
+			
+			try {
+				iHowMany =  Integer.parseInt(br.readLine()) ;
+			} catch (Exception e) {
+				iHowMany = 1;
 			}
-			
-			// choose random customer and remove it from database
-			Customer cR = lstC.get(new Random().nextInt(lstC.size()));
-			db.detach(cR);
-			System.out.println(cR+ "    <-- removed");
-			db.delete(cR);
+						
+			for (int i = 0; i < iHowMany; i++) {
+				// get all customers from database
+				List<Customer> lstC = db.query(new OSQLSynchQuery<Customer>(
+						"select * from Customer"));
+				if (lstC.isEmpty()) {
+					System.out.println("No Customers in DB");
+					return;
+				}
+				// choose random customer and remove it from database
+				Customer cR = lstC.get(new Random().nextInt(lstC.size()));
+				db.detach(cR);
+				System.out.println(cR + "    <-- removed");
+				db.delete(cR);
+			}
 		}
 		
 		void show()
 		{
 			if(db==null || db.isClosed()) connect();
 			
-//			String sCluster;
-//			for (String iterable_element : iterable) {
-//				
-//			}
-//			{
-//				
-//				
-//			}
+			System.out.println("#################  SHOW  #################");
 			
-			// get all customers from database and print it
-			List<Customer> lstC = db.query(new OSQLSynchQuery<Customer>("select * from Customer"));
+			Collection<String> lClusterNames = db.getClusterNames();
+			
+			System.out.println("Select clustername or leave it empty to show all records of class:");
+			for (String s : lClusterNames) {
+				if(s.contains("customer")) System.out.println(s);
+			}
+			System.out.println("");
+			
+			String sClusterName = "";
+			br = new BufferedReader(new InputStreamReader(System.in));
+			
+			try {
+				sClusterName = br.readLine();
+			} catch (Exception e) {
+				sClusterName = "";
+			}
+			
+			String sSQL = "";
+			
+			if(sClusterName.isEmpty()){
+				sSQL = "select * from Customer";
+			}
+			else
+			{
+				sSQL = "select * from cluster:"+sClusterName;
+			}
+			
+			// get customers from database and print it
+			List<Customer> lstC = null;
+			try {
+				lstC = db.query(new OSQLSynchQuery<Customer>(sSQL));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			if(lstC == null)
+			{
+				System.out.println("error");
+				return;
+			}
 			
 			if(lstC.isEmpty())
 			{
