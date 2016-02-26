@@ -5,9 +5,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import com.orientechnologies.orient.client.remote.OServerAdmin;
+import com.orientechnologies.orient.core.query.OQuery;
+import com.orientechnologies.orient.core.record.impl.ODocument;
+import com.orientechnologies.orient.core.sql.OCommandSQL;
+import com.orientechnologies.orient.core.sql.query.OSQLQuery;
 import com.orientechnologies.orient.core.sql.query.OSQLSynchQuery;
 import com.orientechnologies.orient.object.db.OObjectDatabaseTx;
+import com.sun.jna.platform.unix.X11.XClientMessageEvent.Data;
 
+import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -19,6 +26,7 @@ import java.util.Random;
 import java.util.concurrent.Phaser;
 import java.util.regex.Pattern;
 
+import javax.swing.plaf.SliderUI;
 import javax.xml.crypto.dsig.keyinfo.KeyValue;
 
 
@@ -33,13 +41,13 @@ public class Manager {
 		void startLoop(){
 	
 			System.out.println("welcome, what do you want to do?");
-			System.out.println("'c' | connect");
-			System.out.println("'d' | disconnect");
-			System.out.println("'a' | add");
-			System.out.println("'r' | remove");
-			System.out.println("'s' | show");
-			System.out.println("'q' | quit");
-			System.out.println("'cluster'");
+			System.out.println("'c'   | connect");
+			System.out.println("'d'   | disconnect");
+			System.out.println("'a'   | add");
+			System.out.println("'r'   | remove");
+			System.out.println("'s'   | show");
+			System.out.println("'q'   | quit");
+			System.out.println("'cldb'| create local test db");
 			
 			String sInput = "";
 			br = new BufferedReader(new InputStreamReader(System.in));
@@ -56,13 +64,13 @@ public class Manager {
 			{
 				switch (sInput) 
 				{
-					case "connect":		case "c": connect();    break;
-					case "disconnect":	case "d": disconnect();	break;
-					case "add":			case "a": add();     	break;
-					case "remove":		case "r": remove();  	break;
-					case "show":		case "s": show();    	break;
-					case "cluster":				 cluster();		break;
-					default: System.out.println("???"); 		break;
+					case "connect":		case "c": connect();    	break;
+					case "disconnect":	case "d": disconnect();		break;
+					case "add":			case "a": add();     		break;
+					case "remove":		case "r": remove();  		break;
+					case "show":		case "s": show();    		break;
+					case "cldb":				createLocalDB();	break;
+					default: System.out.println("???"); 			break;
 				}
 				System.out.println("____________________________________________________________________\nand now (c|d|a|r|s|q|cluster)?");
 				try{
@@ -79,6 +87,8 @@ public class Manager {
 		void connect()
 		{		
 			disconnect();
+			
+			
 			System.out.println("###############  CONNECT  ################");
 			
 			// get available docker names an IPs
@@ -150,19 +160,41 @@ public class Manager {
 			//connect (create) database
 			try 
 			{
+				String sDBName = "test2";
+				
 				// CREATE A SERVER ADMIN CLIENT AGAINST A REMOTE SERVER TO CHECK IF DB EXISTS				
-				OServerAdmin oSAdmin = new OServerAdmin("remote:"+sIP+"/test").connect("root","root");
-							
+				OServerAdmin oSAdmin = new OServerAdmin("remote:"+sIP+"/"+sDBName).connect("root","root");
+				
 				if(!oSAdmin.existsDatabase())
 				{
 					//create database if not exists	
 					System.out.println("DB dosen't exist --> Create");
-					oSAdmin.createDatabase("test","object","plocal").close();
+					oSAdmin.createDatabase(sDBName,"object","plocal").close();
+					
+					// open database
+					db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root");	
+					
+					//Add Cluster
+					String sClusters="";
+					
+					for (String sDockerName : dockerIPs.values()) {
+						String sName = "customer_"+sDockerName;
+						System.out.println("add cluster "+sName);
+						//db.command(new OCommandSQL(sSQL)).execute();
+						db.addCluster(sName);
+						sClusters += (sClusters.isEmpty())?""+sName:","+sName;
+					}
+					
+					String sSQL = "create class Customer cluster "+ sClusters;
+					System.out.println(sSQL);
+					db.command(new OCommandSQL(sSQL)).execute();
+					db.close();
 				}
 				oSAdmin.close();
 				
 				// open database
-				db = new OObjectDatabaseTx("remote:"+sIP+"/test").open("root","root");	
+				db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root");	
+				
 				// REGISTER THE CLASS ONLY ONCE AFTER THE DB IS OPEN/CREATED
 				db.getEntityManager().registerEntityClass(Customer.class);
 				
@@ -310,19 +342,7 @@ public class Manager {
 				System.out.println(c);
 			}
 		}
-		
-		void cluster()
-		{
-			String sClusterName = "customer_"+dockerIPs.get(sCurrentIP);
-						
-			if(!db.getClusterNames().contains(sClusterName))
-			{
-				System.out.println("add: "+sClusterName);
-				db.addCluster(sClusterName,Customer.class);	
-				db.query(new OSQLSynchQuery<Customer>("ALTER CLASS Customer ADDCLUSTER "+sClusterName));
-			}	
-		}
-		
+			
 		String selectCluster()
 		{
 			try {
@@ -331,7 +351,7 @@ public class Manager {
 				Collection<String> lClusterNames = db.getClusterNames();
 				LinkedHashMap<Integer,String> mapCClusters = new LinkedHashMap<>();
 				
-				System.out.println("Select clustername:");
+				System.out.println("Select clustername (empty for default):");
 				int i =0;
 				for (String s : lClusterNames) {
 					if(s.contains("customer"))
@@ -353,7 +373,7 @@ public class Manager {
 							break;
 						} catch (Exception e) 
 						{
-							sSelCluster = null;
+							return null;
 						}
 					}
 				}
@@ -364,5 +384,15 @@ public class Manager {
 			}
 			
 		}
-		
+
+		void createLocalDB()
+		{
+			try {
+				db = new OObjectDatabaseTx ("plocal:/home/micha/master_informatik/1_semester/modern_database/orientdb-tutorial-distributed-database/docker/databases/testdb").create();
+				System.out.println("plocal:/home/micha/master_informatik/1_semester/modern_database/orientdb-tutorial-distributed-database/docker/databases/testdb");
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+
+		}
 }

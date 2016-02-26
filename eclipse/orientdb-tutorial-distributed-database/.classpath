@@ -8,5 +8,7 @@
 	<classpathentry kind="lib" path="lib/orientdb-community-2.1.5/lib/orientdb-client-2.1.5.jar"/>
 	<classpathentry kind="lib" path="lib/orientdb-community-2.1.5/lib/concurrentlinkedhashmap-lru-1.4.1.jar"/>
 	<classpathentry kind="lib" path="lib/orientdb-community-2.1.5/lib/javassist-3.16.1-GA.jar"/>
+	<classpathentry kind="lib" path="lib/orientdb-community-2.1.5/lib/jna-4.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/orientdb-community-2.1.5/lib/jna-platform-4.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
