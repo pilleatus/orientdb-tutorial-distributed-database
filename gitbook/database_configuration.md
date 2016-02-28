@@ -4,15 +4,18 @@ For the database-instances we will use the official OrientDB package from
 https://hub.docker.com/r/orientdb/orientdb/    
 
 ###1. Create an image with the configuration for the servers
-First of all we will create an image for a DDBMS-Server. Later it is possible to create some instances with the generated image to setup up our servers.  
-To make a new Image with some changes, you can use a Dockerfile. We already added the following dockerfile to the repository:
+First of all we will create an image for a DDBMS-Server. Later it is possible to create some instances with the generated image to start up some DB-Servers.  
+To create a new Image with some changes, you can use a Dockerfile. We already added the following Dockerfile to the repository:
 
 ####Dockerfile:
 
-    FROM orientdb/orientdb:2.1.5
+    FROM orientdb/orientdb:latest
+    #FROM orientdb/orientdb:2.1.5
+
     COPY ./default-distributed-db-config.json /orientdb/config/default-distributed-db-config.json
+    COPY ./server.sh /orientdb/bin/server.sh
     
-The first Line defines the under-laying image. The second command overwrites the configuration for our distributed system.
+The first Line defines the under-laying image, in this case from user "orientdb" the image "orientdb" and the latest version. The first COPY command overwrites the configuration for our distributed system. 
 
 ####default-distributed-db-config.json:
 In this file you can define, where the clusters will be stored.
@@ -52,14 +55,14 @@ With the following commands we create our new image. Navigate to the docker fold
     
 And start building the image with:
 
-    docker build -t orientdb/costumer_example:1.0 .
+    docker build -t orientdb/customer_example:1.0 .
     
 With this command we defined a the name as `orientdb/costumer_example` and the version `1.0` the last argument defines where docker searches for a Dockerfile
 
 ###2. Create and start (run command) some servers
 With the next instruction we run a docker container with the name `usa` using our previously created image. When the server is started you have to choose password for the root user and enter the name for the server, for our first container `usa`. 
 
-    docker run --name usa -it -v /orientdb/config  orientdb/costumer_example:1.0 dserver.sh
+    docker run --name usa -it -v /orientdb/config  orientdb/customer_example:1.0 dserver.sh
 
 The `-it` flags allocate a pseudo-TTY connection to the container.  
 The `-v /orientdb/config` defines a volume for the corresponding directory. When you start a Docker Container, the changes on this container getting lost when you stop it afterwards without committing your changes. With Volumes you can specify a directory and save them persistent on your file-system. Therefore we must setup the password and the name for the server only at the first start of our container.  
