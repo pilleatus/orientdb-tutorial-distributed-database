@@ -20,6 +20,6 @@ The programming part of this tutorial is wrote in the programming language Java 
 
         git clone https://github.com/pilleatus/orientdb-tutorial-distributed-database.git
     
-or download via link:
+or download it compressed:
     
 https://github.com/pilleatus/orientdb-tutorial-distributed-database/archive/master.zip
