@@ -13,7 +13,9 @@ First of all you have to import the example project in your eclipse workspace.
 
 # Project explorer
 
-![Figure 1-1](./images/project-explorer.png)
+![](./images/project-import.png)
+![](./images/project-explorer.png)
+
 
 
 
