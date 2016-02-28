@@ -9,8 +9,11 @@ To create a new Image with some changes, you can use a Dockerfile. We already ad
 
 ####Dockerfile:
 
+    #FROM orientdb/orientdb:2.1.5
     FROM orientdb/orientdb
+
     COPY ./default-distributed-db-config.json /orientdb/config/default-distributed-db-config.json
+    COPY ./server.sh /orientdb/bin/server.sh
     
 The first Line defines the under-laying image. The second command overwrites the configuration for our distributed system.
 
