@@ -46,9 +46,7 @@ public class Manager {
 			System.out.println("'a'   | add");
 			System.out.println("'r'   | remove");
 			System.out.println("'s'   | show");
-			System.out.println("'q'   | quit");
-			System.out.println("'cldb'| create local test db");
-			
+			System.out.println("'q'   | quit");			
 			String sInput = "";
 			br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -69,10 +67,9 @@ public class Manager {
 					case "add":			case "a": add();     		break;
 					case "remove":		case "r": remove();  		break;
 					case "show":		case "s": show();    		break;
-					case "cldb":				createLocalDB();	break;
 					default: System.out.println("???"); 			break;
 				}
-				System.out.println("____________________________________________________________________\nand now (c|d|a|r|s|q|cluster)?");
+				System.out.println("____________________________________________________________________\nand now (c|d|a|r|s|q)?");
 				try{
 		        	sInput = br.readLine();
 		        } catch(Exception e){}
@@ -160,7 +157,7 @@ public class Manager {
 			//connect (create) database
 			try 
 			{
-				String sDBName = "test2";
+				String sDBName = "WebShopDB";
 				
 				// CREATE A SERVER ADMIN CLIENT AGAINST A REMOTE SERVER TO CHECK IF DB EXISTS				
 				OServerAdmin oSAdmin = new OServerAdmin("remote:"+sIP+"/"+sDBName).connect("root","root");
@@ -268,7 +265,7 @@ public class Manager {
 			}
 						
 			for (int i = 0; i < iHowMany; i++) {
-				// get all customers from database
+				// get all customers from database and all clusters
 				List<Customer> lstC = db.query(new OSQLSynchQuery<Customer>("select * from Customer"));
 				if (lstC.isEmpty()) {
 					System.out.println("No Customers in DB");
@@ -288,31 +285,17 @@ public class Manager {
 			
 			System.out.println("#################  SHOW  #################");
 			
-			Collection<String> lClusterNames = db.getClusterNames();
-			
-			System.out.println("Select clustername or leave it empty to show all records of class:");
-			for (String s : lClusterNames) {
-				if(s.contains("customer")) System.out.println(s);
-			}
-			System.out.println("");
-			
-			String sClusterName = "";
-			br = new BufferedReader(new InputStreamReader(System.in));
-			
-			try {
-				sClusterName = br.readLine();
-			} catch (Exception e) {
-				sClusterName = "";
-			}
-			
+			//Select Cluster
+			String sSelCluster = selectCluster();
 			String sSQL = "";
 			
-			if(sClusterName.isEmpty()){
+			if(sSelCluster == null || sSelCluster.isEmpty())
+			{
 				sSQL = "select * from Customer";
 			}
 			else
 			{
-				sSQL = "select * from cluster:"+sClusterName;
+				sSQL = "select * from cluster:"+sSelCluster;
 			}
 			
 			// get customers from database and print it
@@ -385,14 +368,5 @@ public class Manager {
 			
 		}
 
-		void createLocalDB()
-		{
-			try {
-				db = new OObjectDatabaseTx ("plocal:/home/micha/master_informatik/1_semester/modern_database/orientdb-tutorial-distributed-database/docker/databases/testdb").create();
-				System.out.println("plocal:/home/micha/master_informatik/1_semester/modern_database/orientdb-tutorial-distributed-database/docker/databases/testdb");
-			} catch (Exception e) {
-				System.out.println(e);
-			}
 
-		}
 }
