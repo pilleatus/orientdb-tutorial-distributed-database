@@ -1,8 +1,8 @@
-# Access DB with Java
+# Set-up Eclipse
 
-In this chapter we will access the database from Eclipse via Java.
+In the following chapters we will access and modify the database from Eclipse via Java.
 For a better start, the authors of the book have already created an example Java-Project.
-Afterwards the methods of the example will be explained. If you understood this example, you can modify it and run your own tests.
+Afterwards the methods of the example will be explained. If you understood this example, you can extend or change it and run your own tests.
 
 ## Import Project to Eclipse
 
