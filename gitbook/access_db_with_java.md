@@ -2,11 +2,11 @@
 
 In this chapter we will access the database from Eclipse via Java.
 For a better start, the authors of the book have already created an example Java-Project.
-Following the the methods of the example will be explained. After understanding this example you can modify it and run your own tests. As a sample you can use more server or adding more complex classes to the database.
+Afterwards the methods of the example will be explained. If you understood this example, you can modify it and run your own tests.
 
 # Import Project to Eclipse
 
-First of all you have to import the example project in your eclipse workspace.
+First of all you have to import the example project in eclipse.
 
 1. Start Eclipse
 1. File -> Import -> General -> Existing Projects to Workspace
