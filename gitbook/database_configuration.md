@@ -91,6 +91,7 @@ some other useful docker commands:
 
     docker ps                               #list all running containers
     docker images                           #list all images
+    docker volume ls                        #list all volumes
     docker stop $(docker ps -a -q)          #stop all containers
    
 cleaning up:
