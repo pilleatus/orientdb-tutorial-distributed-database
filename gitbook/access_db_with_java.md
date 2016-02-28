@@ -11,7 +11,9 @@ First of all you have to import the example project in your eclipse workspace.
 1. Start Eclipse
 2. File -> Import -> General -> Existing Projects to Workspace -> Select root directory  ("Copy Projects into workspace") -> Finish
 
+# Project explorer
 
+![Figure 1-1](gitbook/images/project-explorer.png)
 
 
 
