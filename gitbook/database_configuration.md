@@ -69,7 +69,7 @@ Docker starts now building a new image based on the Dockerfile commands. The nam
 ###2. Create and start (run command) some servers
 With the next instruction we run a docker container with the name `usa` using our previously created image. When the server is started you have to choose a password for the root user and enter the name for the server, for our first container `usa`. 
 
-    docker run --name usa -v /orientdb/config -it orientdb/customer_example:1.0 dserver.sh
+    docker run --name usa -v /orientdb/config -it nickname/customer_example:1.0 dserver.sh
 
 The `-it` flags allocate a pseudo-TTY connection to the container.  
 The `-v /orientdb/config` defines a volume for the corresponding directory. When you start a Docker Container, the changes on this container getting lost when you stop it afterwards without committing your changes. With Volumes you can specify a directory and save them persistent on your file-system. Therefore we must setup the password and the name for the server only at the first start of our container.  
@@ -78,32 +78,28 @@ https://docs.docker.com/engine/userguide/containers/dockervolumes/
 
 Now you can also start the other two servers `eu` and the `china`. Just open a new terminal and change the container-name in the command from `usa` to `eu` and at the third server to `china`. When the container is started, you also have to enter a root password again and set the node name accordingly to the container name.
 
-
 ### Dealing with containers
-With the run command you should have started three containers now. And you can go ahead with setting up eclipse.  
-If you will stop/start/restart  
+With the run command you should have created and started three containers now. And you can go ahead with setting up eclipse.  
 
+If you will stop, start or restart a container you can use the following commands (here container usa).
 
-
-
-    
-next time you can start the server with 
-
-    docker start usa
+    docker stop usa                 #start container usa
+    docker start usa                #stop container usa
+    docker restart usa              #restart container usa
     
 some other useful docker commands:
 
     docker ps                               #list all running containers
+    docker images                           #list all images
     docker stop $(docker ps -a -q)          #stop all containers
    
-cleaning up everything:
+cleaning up:
     
-    docker rm $(docker ps -a -q)            #remova all containers
-    docker images                           #list all images
-    docker rmi <id>                         #remove image by id
-    docker rmi $(docker images -q)          #remove all images
-    
-    docker volume rm $(docker volume ls -q) #remove all volumes
+    docker rm usa                               #remove container usa
+    docker rmi nickname/customer_example:1.0    #remove correlated image
+    docker rm $(docker ps -a -q)                #remove all containers
+    docker rmi $(docker images -q)              #remove all images
+    docker volume rm $(docker volume ls -q)     #remove all volumes
 
 
 
