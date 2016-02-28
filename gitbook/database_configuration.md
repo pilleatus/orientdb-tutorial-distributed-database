@@ -79,7 +79,9 @@ https://docs.docker.com/engine/userguide/containers/dockervolumes/
 Now you can also start the other two servers `eu` and the `china`. Just open a new terminal and change the container-name in the command from `usa` to `eu` and at the third server to `china`. When the container is started, you also have to enter a root password again and set the node name accordingly to the container name.
 
 
----------------------------------------------------------------------------------
+### Dealing with containers
+With the run command you should have started three containers now. And you can go ahead with setting up eclipse. 
+
     
 next time you can start the server with 
 
