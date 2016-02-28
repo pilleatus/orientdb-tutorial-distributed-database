@@ -15,7 +15,7 @@ To create a new Image with some changes, you can use a Dockerfile. We already ad
     COPY ./default-distributed-db-config.json /orientdb/config/default-distributed-db-config.json
     COPY ./server.sh /orientdb/bin/server.sh
     
-The first Line defines the under-laying image. The second command overwrites the configuration for our distributed system.
+The first Line defines the under-laying image, in this case from user "orientdb" the image "orientdb" and the latest version. The first COPY command overwrites the configuration for our distributed system. 
 
 ####default-distributed-db-config.json:
 In this file you can define, where the clusters will be stored.
