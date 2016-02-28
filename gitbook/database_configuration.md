@@ -18,7 +18,8 @@ To create a new Image with some changes, you can use a Dockerfile. We already ad
 The first Line defines the under-laying image, in this case from user "orientdb" the image "orientdb" and the latest version. The first COPY command overwrites the configuration for our distributed system. 
 
 ####default-distributed-db-config.json:
-In this file you can define, where the clusters will be stored.
+In this file you can define the behavior of the distributed Servers. Additionally it is possible to define where the clusters will be stored.
+For our example we define three clusters (customer_usa, customer_euwe want split the class Customer, therewith the data will be stored in 
 
 ```json
 {
@@ -36,11 +37,11 @@ In this file you can define, where the clusters will be stored.
     "customer_usa": {
       "servers" : [ "usa", "china" ]
     },
-    "customer_europe": {
-      "servers" : [ "europe", "usa" ]
+    "customer_eu": {
+      "servers" : [ "eu", "usa" ]
     },
     "customer_china": {
-      "servers" : [ "china", "europe" ]
+      "servers" : [ "china", "eu" ]
     },
     "*": {
       "servers" : [ "<NEW_NODE>" ]
