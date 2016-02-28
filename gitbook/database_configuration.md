@@ -103,6 +103,8 @@ cleaning up:
     docker volume rm $(docker volume ls -q)     #remove all volumes
 
 
+find more on:
+https://docs.docker.com/engine/quickstart/
 
 
 
