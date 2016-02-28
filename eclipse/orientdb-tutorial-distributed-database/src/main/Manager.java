@@ -3,31 +3,17 @@ package main;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
-import com.orientechnologies.orient.client.remote.OServerAdmin;
-import com.orientechnologies.orient.core.query.OQuery;
-import com.orientechnologies.orient.core.record.impl.ODocument;
-import com.orientechnologies.orient.core.sql.OCommandSQL;
-import com.orientechnologies.orient.core.sql.query.OSQLQuery;
-import com.orientechnologies.orient.core.sql.query.OSQLSynchQuery;
-import com.orientechnologies.orient.object.db.OObjectDatabaseTx;
-import com.sun.jna.platform.unix.X11.XClientMessageEvent.Data;
-
-import java.sql.Date;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Map;
 import java.util.Random;
-import java.util.concurrent.Phaser;
 import java.util.regex.Pattern;
 
-import javax.swing.plaf.SliderUI;
-import javax.xml.crypto.dsig.keyinfo.KeyValue;
+import com.orientechnologies.orient.client.remote.OServerAdmin;
+import com.orientechnologies.orient.core.sql.OCommandSQL;
+import com.orientechnologies.orient.core.sql.query.OSQLSynchQuery;
+import com.orientechnologies.orient.object.db.OObjectDatabaseTx;
 
 
 
@@ -115,6 +101,7 @@ public class Manager {
 				    while ((line = reader.readLine())!= null) {    	
 				    	dockerIPs.put(line.split("::")[0],line.split("::")[1]);
 				    }
+				    
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				} catch (InterruptedException e) {
@@ -137,7 +124,7 @@ public class Manager {
 				{
 					System.out.println(i+": "+entry.getKey()+ ":" + entry.getValue());
 					i++;
-				}
+				}				
 			}
 			while (true) {
 				try {
@@ -228,20 +215,21 @@ public class Manager {
 			}
 			
 			//Select Cluster
-			String sSelCluster = selectCluster();
+			//String sSelCluster = selectCluster();
+			String sSelCluster =  null;		// add to default
 			
 			// generate random customer and add it to the database
 			for (int i = 0; i < iHowMany; i++) {
 				try {
 					String sR = String.valueOf(new Random().nextInt(900) + 100);
 					Customer c = new Customer("s" + sR, "n" + sR, "str" + sR, "city" + sR);
-					if(sSelCluster == null)
+					if(sSelCluster == null || sSelCluster.isEmpty())
 					{
 						db.save(c);						
-						System.out.println(c + "    <-- added");
+						System.out.println(c + "    <-- added to cluster:default");
 					}else {
 						db.save(c,sSelCluster);
-						System.out.println(c + "    <-- added to "+sSelCluster);
+						System.out.println(c + "    <-- added to cluster:"+sSelCluster);
 					}
 				} catch (Exception e) {
 					System.out.println(e);				
@@ -265,20 +253,24 @@ public class Manager {
 			}
 						
 			for (int i = 0; i < iHowMany; i++) {
-				// get all customers from database and all clusters
-				List<Customer> lstC = db.query(new OSQLSynchQuery<Customer>("select * from Customer"));
-				if (lstC.isEmpty()) {
-					System.out.println("No Customers in DB");
+				// get all customers from current cluster
+				
+				String sClusterName= "customer_"+dockerIPs.get(sCurrentIP);
+				List<Customer> lstC = db.query(new OSQLSynchQuery<Customer>("select * from cluster:"+sClusterName));
+				
+				if (lstC == null || lstC.isEmpty()) {
+					System.out.println("No Customers in cluster:"+sClusterName);
 					return;
 				}
 				// choose random customer and remove it from database
 				Customer cR = lstC.get(new Random().nextInt(lstC.size()));
 				db.detach(cR);
-				System.out.println(cR + "    <-- removed");
+				System.out.println(cR + "    <-- removed from cluster:"+sClusterName);
 				db.delete(cR);
 			}
 		}
 		
+	
 		void show()
 		{
 			if(db==null || db.isClosed()) connect();
@@ -297,16 +289,15 @@ public class Manager {
 			{
 				sSQL = "select * from cluster:"+sSelCluster;
 			}
-			
+						
 			// get customers from database and print it
 			List<Customer> lstC = null;
 			try {
 				lstC = db.query(new OSQLSynchQuery<Customer>(sSQL));
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println(e);
 			}
-			
+						
 			if(lstC == null)
 			{
 				System.out.println("error");
@@ -319,6 +310,8 @@ public class Manager {
 				return;
 			}
 			
+			
+			// show all customers
 			for (Customer c: lstC) 
 			{
 				db.detach(c);
@@ -326,6 +319,7 @@ public class Manager {
 			}
 		}
 			
+	
 		String selectCluster()
 		{
 			try {
