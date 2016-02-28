@@ -6,7 +6,7 @@ On the OrientDB Manual Sites are already the basics good explained, to understan
 http://orientdb.com/docs/2.0/orientdb.wiki/Distributed-Architecture.html   
 In this Tutorial we will make an implementation, similar to the example in the OrientDB doc's. 
 
-![Figure 1-1](https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/schema.png?raw=true)
+![Figure 1-1](gitbook/images/schema.png)
 
 This may helps you to understand and test the capabilities and the limits of such a distributed Database.
 
