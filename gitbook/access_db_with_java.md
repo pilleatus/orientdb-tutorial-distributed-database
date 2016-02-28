@@ -19,7 +19,19 @@ After the import, your project explorer should be similar with:
 
 ![](./images/project-explorer.png)
 
-In the proje
+In the main package of the project there are three classes:
+    
+1. Customer:        defines a simple person with name, address...
+2. Main:            entry-point for our program
+3. Manager:         various methods for connecting and modifying DB
+
+The customer example is a Java-Object-Project, so we used the Object-API from OrientDB with the corresponding libraries. 
+
+
+
+
+http://orientdb.com/docs/last/Object-Database.html
+
 
 
 
