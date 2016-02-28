@@ -8,6 +8,7 @@ To decrease the risk for a data lost, well will store each cluster on a second s
 ![Figure 1-1](https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/schema.png?raw=true)
 
 By default OrientDB creates one cluster per class. Therefor all instances will be stored in this cluster. When you start some distributed Servers and you don't change the settings, every server will store all clusters.  
-For example when you register the class Client, the server will create a cluster named "client" and this cluster will reduplicated on all running servers.
+For example when you register the class Client, the server will create a cluster named "client" and this cluster will reduplicated on all running servers.  
+To change this behavior, we have to change some settings in this tutorial.
 
 
