@@ -20,7 +20,7 @@ The first Line defines the under-laying image, in this case from user "orientdb"
 ####default-distributed-db-config.json:
 In this file you can define the behavior of the distributed Servers. Additionally it is possible to define where the clusters will be stored.
 For our example we define three clusters (`customer_usa`, `customer_eu`, `customer_china`).  
-The names of the cluster should be defined with ```<class>_<node>```. Therefor we will use three servers (`usa`,`eu`,`china`).
+The names of the cluster should be defined with ```<class>_<node>```. Therefor we will use three servers (`usa`,`eu`,`china`).  
 You can get further information about sharding on:
 http://orientdb.com/docs/2.0/orientdb.wiki/Distributed-Sharding.html    
 
@@ -55,6 +55,9 @@ http://orientdb.com/docs/2.0/orientdb.wiki/Distributed-Sharding.html
 }
 ```
 
+
+
+#### Create the docker image:
 With the following commands we create our new image. Navigate to the docker folder in the repository
 
     cd docker
