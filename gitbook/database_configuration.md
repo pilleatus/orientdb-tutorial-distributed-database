@@ -4,7 +4,7 @@ For the database-instances we will use the official OrientDB package from
 https://hub.docker.com/r/orientdb/orientdb/    
 
 ###1. Create an image with the configuration for the servers
-First of all we will create an image for a DDBMS-Server. Later it is possible to create some instances with the generated image to setup up our servers.  
+First of all we will create an image for a DDBMS-Server. Later it is possible to create some instances with the generated image to start up some DB-Servers.  
 To make a new Image with some changes, you can use a Dockerfile. We already added the following dockerfile to the repository:
 
 ####Dockerfile:
