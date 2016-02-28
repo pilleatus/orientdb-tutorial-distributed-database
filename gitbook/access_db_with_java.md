@@ -15,7 +15,7 @@ First of all you have to import the example project in eclipse.
     
     ![](./images/project-import.png)
 
-After the import the project, your project explorer should be similar with this:
+After the import, your project explorer should be similar with:
 
 ![](./images/project-explorer.png)
 
