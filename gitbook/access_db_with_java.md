@@ -5,7 +5,13 @@ The customer example is a Java-Object-Project, so we have to use the  Object-API
 
 http://orientdb.com/docs/last/Object-Database.html
 
-In For the customer example we will made a Java-Object-Project. There will be classes like Customer and methods to access, write and read the database. 
+
+
+importierten
+connect ... main s, was passiert dissconnect
+
+
+For the customer example we will made a Java-Object-Project. There will be classes like Customer and methods to access, write and read the database. 
 First of all we have to create a new Java project.  
 
 
