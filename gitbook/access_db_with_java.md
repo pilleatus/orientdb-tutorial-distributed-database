@@ -9,17 +9,17 @@ Following the the methods of the example will be explained. After understanding 
 First of all you have to import the example project in your eclipse workspace.
 
 1. Start Eclipse
-2. File -> Import -> General -> Existing Projects to Workspace
+1. File -> Import -> General -> Existing Projects to Workspace
 
-    Selecet the "orientdb-tutorial-distributed-database" folder 
-![](./images/project-import.png)
+    Select the "orientdb-tutorial-distributed-database" folder from the downloaded repository.
+    
+    ![](./images/project-import.png)
 
-Select root directory -> Finish
-
-# Project explorer
+After the import the project, your project explorer should be similar with this:
 
 ![](./images/project-explorer.png)
 
+In the proje
 
 
 
