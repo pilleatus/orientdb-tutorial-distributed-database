@@ -4,6 +4,21 @@ In this chapter we will access the database from Eclipse via Java.
 For a better start, the authors of the book have already create an example Java-Project.
 Following the the methods of the example will be explained. After understanding this example you can modify it and run your own tests. As a sample you can use more server or adding more complex classes to the database.
 
+# Import Project to Eclipse
+
+First of all you have to import the example project in your eclipse workplace.
+
+
+
+
+
+
+
+# ...
+
+
+
+
 The customer example is a Java-Object-Project, so we have to use the Object-API from OrientDB:
 
 http://orientdb.com/docs/last/Object-Database.html
