@@ -6,7 +6,7 @@ Afterwards the methods of the example will be explained. If you understood this 
 
 ## Import Project to Eclipse
 
-First of all you have to import the example project in eclipse.
+First of all you have to import the example project in eclipse:
 
 1. Start Eclipse
 1. File -> Import -> General -> Existing Projects to Workspace
