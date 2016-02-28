@@ -10,7 +10,7 @@ https://docs.docker.com/engine/installation
 
 If you are using Windows there will be an extra virtualisation Layer between Docker and Windows. That's because docker needs some Linux-Kernel functions.
 If you have time to experiment or if you need this application running on Windows, you're welcome to share your experience (pull request) ;).
-Otherwise its maybe easier to install a virtual Linux System with for example Virtualbox and use it for the tutorial.
+Otherwise its maybe easier to install a virtual Linux System, for example Virtualbox and use it for the tutorial.
 
 ##install Eclipse
 
