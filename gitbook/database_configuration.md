@@ -55,8 +55,6 @@ http://orientdb.com/docs/2.0/orientdb.wiki/Distributed-Sharding.html
 }
 ```    
 
-
-
 #### Create the docker image:
 With the following commands we create our new image. Navigate to the docker folder in the repository
 
