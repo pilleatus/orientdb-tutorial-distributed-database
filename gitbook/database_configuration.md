@@ -80,7 +80,11 @@ Now you can also start the other two servers `eu` and the `china`. Just open a n
 
 
 ### Dealing with containers
-With the run command you should have started three containers now. And you can go ahead with setting up eclipse. 
+With the run command you should have started three containers now. And you can go ahead with setting up eclipse.  
+If you will stop/start/restart  
+
+
+
 
     
 next time you can start the server with 
