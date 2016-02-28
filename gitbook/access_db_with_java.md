@@ -13,7 +13,7 @@ First of all you have to import the example project in your eclipse workspace.
 
 # Project explorer
 
-![Figure 1-1](gitbook/images/project-explorer.png)
+![Figure 1-1](./images/project-explorer.png)
 
 
 
