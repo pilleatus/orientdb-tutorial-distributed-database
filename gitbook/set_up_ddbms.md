@@ -1,7 +1,7 @@
 # Set-up the DDBMS
 
-Now you can run the main of the Java project.
-Right click on Main.java -> Run As -> Java Application.
+Now you can run the main method of the Java project.
+Right click on Main.java &#x279c; Run As &#x279c; Java Application.<br/>
 In the console you can interact with the application. The output looks like this: 
 
 
@@ -14,7 +14,7 @@ In the console you can interact with the application. The output looks like this
     'q'   | quit
 
 
-In the first step, we made a remote connection to a database in our docker-container, with 'c' -> enter.
+In the first step, we made a remote connection to a database in our docker-container, with 'c' &#x279c; enter.
 On Linux systems the available docker IP's appear:
 
     Please select Database-Server or enter IP address:  (e.g. "172.17.0.3")
@@ -25,49 +25,38 @@ On Linux systems the available docker IP's appear:
     2: 172.17.0.4:usa
 
 Now we can choose to with of the three Databases we want to connect.
-When we input "2" the application will connect to "172.17.0.4:usa". 
+When we input '2' the application will connect to the usa docker with ip 172.17.0.4. 
 Lets look in the source code of the method connection() in Manager.java:
 
+To make a remote connection to a database we use the keyword "remote:", there is also a possibility to connect to a local DB with "plocal:/DBName": 
 
     String sDBName = "WebShopDB";
 	
+    // OPEN THE DATABASE
+    OObjectDatabaseTx db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root"); 
+	
+	
+The first time a exception will be thrown, because the database doesn't exists. So we have to check this behaviour before we open the database:  
+
+	String sDBName = "WebShopDB";
+				
 	// CREATE A SERVER ADMIN CLIENT AGAINST A REMOTE SERVER TO CHECK IF DB EXISTS				
 	OServerAdmin oSAdmin = new OServerAdmin("remote:"+sIP+"/"+sDBName).connect("root","root");
 	
 	if(!oSAdmin.existsDatabase())
 	{
 		//create database if not exists	
-		System.out.println("DB dosen't exist --> Create");
 		oSAdmin.createDatabase(sDBName,"object","plocal").close();
-		
-		// open database
-		db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root");	
-		
-		//Add Cluster
-		String sClusters="";
-		
-		for (String sDockerName : dockerIPs.values()) {
-			String sName = "customer_"+sDockerName;
-			System.out.println("add cluster "+sName);
-			//db.command(new OCommandSQL(sSQL)).execute();
-			db.addCluster(sName);
-			sClusters += (sClusters.isEmpty())?""+sName:","+sName;
-		}
-		
-		String sSQL = "create class Customer cluster "+ sClusters;
-		System.out.println(sSQL);
-		db.command(new OCommandSQL(sSQL)).execute();
-		db.close();
 	}
 	oSAdmin.close();
 	
-	// open database
-	db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root");	
-	
-	// REGISTER THE CLASS ONLY ONCE AFTER THE DB IS OPEN/CREATED
-	db.getEntityManager().registerEntityClass(Customer.class);
-	
-	System.out.println("connect to "+dockerIPs.get(sCurrentIP));
+	// OPEN THE DATABASE
+    OObjectDatabaseTx db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root");
+
+
+
+
+&#10140;ZGgfdg &#x279c;
 
 
 
