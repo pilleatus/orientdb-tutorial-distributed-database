@@ -14,9 +14,9 @@ By typing 'a' for add, a random Customer will be added to the default cluster of
     
 If you are connected to china the default cluster is <TT>customer_china</TT>. The source code for adding is:
 
-<pre style="background-color:#E0E6F8">Customer c = new Customer("s163","n163","str163","city163");
+<pre style="background-color:#E0E6F8"><code>Customer c = new Customer("s163","n163","str163","city163");
 db.save(c);	
-</pre>
+</code></pre>
 
 ###Show
 To show the existing Customers you have to press 's':
