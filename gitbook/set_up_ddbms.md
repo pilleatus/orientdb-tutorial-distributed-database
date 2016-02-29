@@ -1,9 +1,6 @@
-<a><img align="right" width="15%" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/setup_db.png?raw=true"/></a>
-
-
 # Set-up the DDBMS
 
-Now you can run the main method of the Java project.
+Now you can run the main method of the Java project.  
 Right click on Main.java &#x279c; Run As &#x279c; Java Application.<br/>
 In the console you can interact with the application. The output looks like this: 
 
@@ -29,11 +26,11 @@ On Linux systems the available docker IP's appear:
     1: 172.17.0.2:eu
     2: 172.17.0.4:usa
 
-Now you can choose to with of the three Databases we want to connect.
-When you input '2' the application will connect to the usa docker with ip 172.17.0.4. 
+Now you can choose to which of the three Databases we want connect to.
+When you input '2' the application will connect to the usa docker-container with the ip 172.17.0.4. 
 Lets look in the source code of the method connection() in Manager.java:
 
-To make a remote connection to a database we use the keyword "remote:", there is also a possibility to connect to a local DB with "plocal:/DBName": 
+To make a connection over IP to a database we use the keyword "remote:". For authentication we use the user 'root' and the password 'root'. If you have choosen an other password, by setting up the docker-container you have to change it accordingly. 
 
 <pre style="background-color:#E0E6F8">String sDBName = "WebShopDB";
 
