@@ -1,5 +1,7 @@
 # Fill the DB
 
+add_customer
+
 In the previous chapter you learned how to connect/disconnect to the database. Now you will add some Customer.<br/>
 By typing 'a' for add, a random Customer will be added to the default cluster of your connected server.
 
