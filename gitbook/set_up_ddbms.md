@@ -49,6 +49,9 @@ if(!oSAdmin.existsDatabase())
 {
 	//create database if not exists	
 	oSAdmin.createDatabase(sDBName,"object","plocal").close();
+	
+	//create clusters 
+	...
 }
 oSAdmin.close();
 
@@ -56,22 +59,11 @@ oSAdmin.close();
 OObjectDatabaseTx db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root");
 </pre>	
 
-Additional after the creation of the database the method creates clusters for the class Customer.For each configured server one. 
+ After the generation of the database the method creates clusters for the class Customer.Dynamically for each configured server one. 
 
-<pre style="background-color:#E0E6F8">String sDBName = "WebShopDB";
-				
-// CREATE A SERVER ADMIN CLIENT AGAINST A REMOTE SERVER TO CHECK IF DB EXISTS				
-OServerAdmin oSAdmin = new OServerAdmin("remote:"+sIP+"/"+sDBName).connect("root","root");
-
-if(!oSAdmin.existsDatabase())
-{
-	//create database if not exists	
-	oSAdmin.createDatabase(sDBName,"object","plocal").close();
-}
-oSAdmin.close();
-
-// OPEN THE DATABASE
-OObjectDatabaseTx db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root");
+<pre style="background-color:#E0E6F8">//create clusters
+String sSQL = "create class Customer cluster customer_china,customer_eu,customer_usa";
+db.command(new OCommandSQL(sSQL)).execute();
 </pre>
 
 
