@@ -78,28 +78,11 @@ db.getEntityManager().registerEntityClass(Customer.class);
 </pre>
 
 
-
-
-
-
-
-
-
 ### disconnect()
-
-
-
-
-
-
-
-
-
-
-<hr/><hr/><hr/>
-
-now we can start 
-
-add 
-show 
-remove
+By typing 'd' you disconnect from the database:
+<pre style="background-color:#E0E6F8">// disconnect database
+if( db!=null && !db.isClosed() )
+{
+	db.close();
+}
+</pre>
