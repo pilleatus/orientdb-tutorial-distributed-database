@@ -28,7 +28,7 @@ On Linux systems the available docker IP's appear:
     1: 172.17.0.2:eu
     2: 172.17.0.4:usa
 
-Now you can choose to which of the three Databases we want connect to.
+Now you can choose to which of the three Databases you want connect to.
 When you input '2' the application will connect to the usa docker-container with the ip 172.17.0.4. 
 Lets look in the source code of the method connection() in Manager.java:
 
