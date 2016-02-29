@@ -1,4 +1,5 @@
-<a align="right" width="35%"><img src="./images/add_customer.png"/></a>
+<a href="https://commons.wikimedia.org/wiki/File%3ADocker_(container_engine)_logo.png"><img align="right" width="35%" alt="Docker (container engine) logo" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/add_customer.png?raw=true"/></a>
+
 
 # Fill the DB
 
