@@ -1,4 +1,4 @@
-<a><img align="right" width="25%" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/setup_db.png?raw=true"/></a>
+<a><img align="right" width="15%" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/setup_db.png?raw=true"/></a>
 
 
 # Set-up the DDBMS
