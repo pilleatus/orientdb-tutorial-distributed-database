@@ -32,7 +32,7 @@ Now you can choose to which of the three Databases we want connect to.
 When you input '2' the application will connect to the usa docker-container with the ip 172.17.0.4. 
 Lets look in the source code of the method connection() in Manager.java:
 
-To make a connection over IP to a database we use the keyword "remote:". For authentication we use the user 'root' and the password 'root'. If you have choosen an other password, by setting up the docker-container you have to change it accordingly. 
+To make a connection over IP to a database we use the keyword "remote:". For authentication we use the user 'root' and the password 'root'. If you have choosen an other password, by setting up the docker-container you have to change it here accordingly. 
 
 <pre style="background-color:#E0E6F8">String sDBName = "WebShopDB";
 
