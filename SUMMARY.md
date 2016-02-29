@@ -9,6 +9,5 @@
    * [Set-up DDBMS](gitbook/set_up_ddbms.md)
    * Fill the DB
    * [Tests](gitbook/tests.md)
-       * Fill the DB
 * [Conclusion](gitbook/conclusion.md)
 
