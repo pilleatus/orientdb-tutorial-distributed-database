@@ -1,3 +1,6 @@
+<a><img align="right" width="25%" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/setup_db.png?raw=true"/></a>
+
+
 # Set-up the DDBMS
 
 Now you can run the main method of the Java project.
