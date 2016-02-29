@@ -12,8 +12,37 @@ By typing 'a' for add, a random Customer will be added to the default cluster of
     
     Surname: s163  |  Name: n163  |  Address: city163 str163    <-- added to cluster:default
     
-If you are connected to china the default cluster is <TT>customer_china</TT>.
+If you are connected to china the default cluster is <TT>customer_china</TT>. The source code for adding is:
 
-In the source-code it look like:
+<pre style="background-color:#E0E6F8">Customer c = new Customer("s163","n163","str163","city163");
+db.save(c);	
+</pre>
 
+To show the existing Customers you have to press 's':
 
+    Select clustername (empty for default):
+    0: customer_eu
+    1: customer_usa
+    2: customer_china
+ 
+now you have two options:
+
+1. Select customers from all clusters
+
+    <pre style="background-color:#E0E6F8"><code>String sSQL = "select * from Customer";</code></pre>
+  
+1. Select customers from specific cluster e.g.: <TT>customer_china</TT>
+
+ <pre style="background-color:#E0E6F8"><code>String sSQL = "select * from cluster:customer_usa";</code></pre>
+
+Booth variants execute a SQL query and saves the returned customers in a list. Finally the method print the customer-list: 
+
+<pre style="background-color:#E0E6F8"><code>List&lt;Customer&gt; lstC = db.query(new OSQLSynchQuery&lt;Customer&gt;(sSQL));
+for (Customer c: lstC) 
+{
+    db.detach(c);
+    System.out.println(c);
+}
+</code></pre>
+  
+Before printing <tt>c</tt>, a detach is necessary. The detach method to load the values from the database in the current object. Otherwise the output is <tt>null</tt>
