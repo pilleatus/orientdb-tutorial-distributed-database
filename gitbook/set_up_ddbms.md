@@ -34,15 +34,15 @@ Lets look in the source code of the method connection() in Manager.java:
 
 To make a connection over IP to a database we use the keyword "remote:". For authentication, we use the user 'root' and the password 'root'. If you have choosen an other password, by setting up the docker-container you have to change it here accordingly. 
 
-<pre style="background-color:#E0E6F8">String sDBName = "WebShopDB";
+<pre style="background-color:#E0E6F8"><code>String sDBName = "WebShopDB";
 
 // OPEN THE DATABASE
 OObjectDatabaseTx db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root"); 
-</pre>	
+</code></pre>	
 	
 The first time a exception will be thrown, because the database doesn't exists. So we have to check this behaviour before we open the database:  
 
-<pre style="background-color:#E0E6F8">String sDBName = "WebShopDB";
+<pre style="background-color:#E0E6F8"><code>String sDBName = "WebShopDB";
 				
 // CREATE A SERVER ADMIN CLIENT AGAINST A REMOTE SERVER TO CHECK IF DB EXISTS				
 OServerAdmin oSAdmin = new OServerAdmin("remote:"+sIP+"/"+sDBName).connect("root","root");
@@ -59,14 +59,14 @@ oSAdmin.close();
 
 // OPEN THE DATABASE
 OObjectDatabaseTx db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root");
-</pre>	
+</code></pre>	
 
  After the generation of the database was successfully, the method creates the clusters for the class Customer dynamically for each configured server, one.  
 
-<pre style="background-color:#E0E6F8">//create clusters
+<pre style="background-color:#E0E6F8"><code>//create clusters
 String sSQL = "create class Customer cluster customer_china,customer_eu,customer_usa";
 db.command(new OCommandSQL(sSQL)).execute();
-</pre>
+</code></pre>
 
 
 in this example the method will create these three clusters:
@@ -75,16 +75,16 @@ in this example the method will create these three clusters:
 * customer_china
 
 Finally we have to register the class to store objects from the class Customer:
-<pre style="background-color:#E0E6F8">// REGISTER THE CLASS ONLY ONCE AFTER THE DB IS OPEN/CREATED
+<pre style="background-color:#E0E6F8"><code>// REGISTER THE CLASS ONLY ONCE AFTER THE DB IS OPEN/CREATED
 db.getEntityManager().registerEntityClass(Customer.class);
-</pre>
+</code></pre>
 
 
 ### disconnect()
 By typing 'd' you can close the connection to the server.
-<pre style="background-color:#E0E6F8">// disconnect database
+<pre style="background-color:#E0E6F8"><code>// disconnect database
 if( db!=null && !db.isClosed() )
 {
 	db.close();
 }
-</pre>
+</code></pre>
