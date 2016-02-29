@@ -72,6 +72,11 @@ in this example the method will create these three clusters:
 * customer_usa
 * customer_china
 
+Finally we have to register the class to store objects from the class Customer:
+<pre style="background-color:#E0E6F8">// REGISTER THE CLASS ONLY ONCE AFTER THE DB IS OPEN/CREATED
+db.getEntityManager().registerEntityClass(Customer.class);
+</pre>
+
 
 
 
