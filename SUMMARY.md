@@ -8,5 +8,6 @@
    * [Import Project to Eclipse](gitbook/import_project.md)
    * [Set-up DDBMS](gitbook/set_up_ddbms.md)
    * [Tests](gitbook/tests.md)
+       * Fill the DB
 * [Conclusion](gitbook/conclusion.md)
 
