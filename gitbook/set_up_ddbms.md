@@ -61,7 +61,7 @@ oSAdmin.close();
 OObjectDatabaseTx db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root");
 </pre>	
 
- After the generation of the database was successfully, the method creates the clusters for the class Customer dynamically for each configured server, one. 
+ After the generation of the database was successfully, the method creates the clusters for the class Customer dynamically for each configured server, one.  
 
 <pre style="background-color:#E0E6F8">//create clusters
 String sSQL = "create class Customer cluster customer_china,customer_eu,customer_usa";
