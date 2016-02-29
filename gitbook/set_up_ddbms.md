@@ -56,17 +56,8 @@ The first time a exception will be thrown, because the database doesn't exists. 
 
 
 
-&#10140;ZGgfdg &#x279c;
 
 
-
-
-
-
-
-
-
-, witch are running on the privius started docker container. 
 
 
 
