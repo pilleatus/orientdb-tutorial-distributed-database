@@ -76,7 +76,7 @@ The `-v /orientdb/config` defines a volume for the corresponding directory. When
 For more information take a look at:
 https://docs.docker.com/engine/userguide/containers/dockervolumes/  
 
-Now you can also start the other two servers `eu` and the `china`. Just open a new terminal and change the container-name in the command from `usa` to `eu` and at the third server to `china`. When the container is started, you also have to enter a root password again and set the node name accordingly to the container name.
+Now you can also start the other two servers `eu` and `china`. Just open two new terminals and change in the command the container-name from `usa` to `eu` and at the third server to `china`. When the container is started, you also have to enter a root password again and set the node name accordingly to the container name.
 
 ### Dealing with containers
 With the run command you should have created and started three containers now. And you can go ahead with setting up eclipse.  
