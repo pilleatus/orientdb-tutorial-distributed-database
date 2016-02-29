@@ -1,6 +1,4 @@
-<a align="right" width="35%">
-
-</a>
+<a align="right" width="35%"><img src="./images/add_customer.png"/></a>
 
 # Fill the DB
 
