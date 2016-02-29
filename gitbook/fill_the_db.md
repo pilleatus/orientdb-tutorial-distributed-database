@@ -46,7 +46,7 @@ for (Customer c: lstC)
 }
 </code></pre>
   
-Before printing <tt>c</tt>, a detach is necessary. "*With the detach method all data contained in the document will be copied in the associated object*"[[OrientDB:Detach](http://orientdb.com/docs/last/Object-Database.html#detach)]. Without detach the the values are <tt>null</tt>.
+Before printing <tt>c</tt>, a detach is necessary. "*With the detach method all data contained in the document will be copied in the associated object*"[[OrientDB#detach](http://orientdb.com/docs/last/Object-Database.html#detach)]. Without detach the the values are <tt>null</tt>.
 
 ###Remove
 To remove a customer you have to press 'r'.
