@@ -21,7 +21,7 @@ In the main package of the project there are three classes:
     
 1. Customer:&ensp; defines a simple person with name, address...
 2. Main:&ensp; &ensp; &ensp; &ensp;entry-point for our program
-3. Manager:&ensp;&ensp;various methods for connecting and modifying the 
+3. Manager:&ensp;&ensp;various methods for connecting and modifying the database
 
 
 
