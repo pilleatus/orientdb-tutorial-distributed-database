@@ -25,5 +25,4 @@ In the main package of the project there are three classes:
 
 
 
-The customer example is a Java-Object-Project, so we used the Object-API from OrientDB with the corresponding libraries.
-http://orientdb.com/download-previous/
+The customer example is a Java-Object-Project, so we used the Object-API from OrientDB with the corresponding libraries  (http://orientdb.com/download-previous/).
