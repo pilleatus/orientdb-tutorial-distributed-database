@@ -45,4 +45,4 @@ for (Customer c: lstC)
 }
 </code></pre>
   
-Before printing <tt>c</tt>, a detach is necessary. The detach method to load the values from the database in the current object. Otherwise the output is <tt>null</tt>
+Before printing <tt>c</tt>, a detach is necessary. "*With the detach method all data contained in the object will be copied in the associated object*"[http://orientdb.com/docs/last/Object-Database.html]. Without detach the the values are <tt>null</tt>.
