@@ -2,7 +2,7 @@
 
 
 # Fill the Database
-###Add
+###add()
 In the previous chapter you learned how to connect/disconnect to the database. Now you will add some Customer.<br/>
 By typing 'a' for add, a random Customer will be added to the default cluster of your connected server.
 
@@ -18,7 +18,7 @@ If you are connected to china the default cluster is <TT>customer_china</TT>. Th
 db.save(c);	
 </code></pre>
 
-###Show
+###show()
 To show the existing Customers you have to press 's':
 
     Select clustername (empty for default):
@@ -48,7 +48,7 @@ for (Customer c: lstC)
   
 Before printing <tt>c</tt>, a detach is necessary. "*With the detach method all data contained in the document will be copied in the associated object*"[[OrientDB#detach](http://orientdb.com/docs/last/Object-Database.html#detach)]. Without detach the values are <tt>null</tt>.
 
-###Remove
+###remove()
 To remove a customer you have to press 'r'. Then a random customer will be removed from your current cluster:
 
     and now (c|d|a|r|s|q)?
