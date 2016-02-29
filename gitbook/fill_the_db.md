@@ -1,3 +1,7 @@
+<a align="right" width="35%">
+
+</a>
+
 # Fill the DB
 
 add_customer
