@@ -2,11 +2,11 @@
 
 
 # Fill the Database
-The output of the docker-container shows the logs from orientDB-server. If you have already connected to a DB-server, it should look like.
+The output of the docker-container shows the logs from orientDB-server.  
+If you have already connected to a DB-server, it should look like:  
 
+![](./images/server_output_1.png)
 The servers use for sharing the config [Hazelcast](https://hazelcast.com/).
-
-
 
 ###add()
 In the previous chapter you learned how to connect/disconnect to the database. Now you will add some Customer.<br/>
