@@ -6,27 +6,27 @@ Now you can run the main method of the Java project.
 Right click on Main.java &#x279c; Run As &#x279c; Java Application.<br/>
 In the console you can interact with the application. The output looks like this: 
 
-
-    welcome, what do you want to do?
-    'c'   | connect
-    'd'   | disconnect
-    'a'   | add
-    'r'   | remove
-    's'   | show
-    'q'   | quit
-
+<pre style="background-color:black; color:white"><code>welcome, what do you want to do?
+'c'   | connect
+'d'   | disconnect
+'a'   | add
+'r'   | remove
+'s'   | show
+'q'   | quit
+</code></pre>
 
 ### connect()
 
 In the first step, we made a remote connection to a database in our docker-container, type 'c' &#x279c; enter.
 On Linux systems the available docker IP's appear:
 
-    Please select Database-Server or enter IP address:  (e.g. "172.17.0.3")
-    
-    Available servers from docker:
-    0: 172.17.0.3:china
-    1: 172.17.0.2:eu
-    2: 172.17.0.4:usa
+<pre style="background-color:black; color:white"><code>Please select Database-Server or enter IP address:  (e.g. "172.17.0.3")
+
+Available servers from docker:
+0: 172.17.0.3:china
+1: 172.17.0.2:eu
+2: 172.17.0.4:usa
+</code></pre>
 
 Now you can choose to which of the three Databases you want connect to.
 When you input '2' the application will connect to the usa docker-container with the IP 172.17.0.4. 
@@ -34,17 +34,17 @@ Lets look in the source code of the method connection() in Manager.java:
 
 To make a connection over IP to a database we use the keyword "remote:". For authentication, we use the user 'root' and the password 'root'. If you have choosen an other password, by setting up the docker-container you have to change it here accordingly. 
 
-<pre style="background-color:#E0E6F8"><code>String sDBName = "WebShopDB";
-
+```java
 // OPEN THE DATABASE
+String sDBName = "WebShopDB";
 OObjectDatabaseTx db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root"); 
-</code></pre>	
+```	
 	
 The first time a exception will be thrown, because the database doesn't exists. So we have to check this behaviour before we open the database:  
 
-<pre style="background-color:#E0E6F8"><code>String sDBName = "WebShopDB";
-				
+```java				
 // CREATE A SERVER ADMIN CLIENT AGAINST A REMOTE SERVER TO CHECK IF DB EXISTS				
+String sDBName = "WebShopDB";
 OServerAdmin oSAdmin = new OServerAdmin("remote:"+sIP+"/"+sDBName).connect("root","root");
 
 if(!oSAdmin.existsDatabase())
@@ -59,14 +59,15 @@ oSAdmin.close();
 
 // OPEN THE DATABASE
 OObjectDatabaseTx db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root");
-</code></pre>	
+```	
 
  After the generation of the database was successfully, the method creates the clusters for the class Customer dynamically for each configured server, one.  
 
-<pre style="background-color:#E0E6F8"><code>//create clusters
+```java
+//create clusters
 String sSQL = "create class Customer cluster customer_china,customer_eu,customer_usa";
 db.command(new OCommandSQL(sSQL)).execute();
-</code></pre>
+```
 
 
 in this example the method will create these three clusters:
@@ -75,16 +76,18 @@ in this example the method will create these three clusters:
 * customer_china
 
 Finally we have to register the class to store objects from the class Customer:
-<pre style="background-color:#E0E6F8"><code>// REGISTER THE CLASS ONLY ONCE AFTER THE DB IS OPEN/CREATED
+```java
+// REGISTER THE CLASS ONLY ONCE AFTER THE DB IS OPEN/CREATED
 db.getEntityManager().registerEntityClass(Customer.class);
-</code></pre>
+```
 
 
 ### disconnect()
 By typing 'd' you can close the connection to the server.
-<pre style="background-color:#E0E6F8"><code>// disconnect database
+```java
+// disconnect database
 if( db!=null && !db.isClosed() )
 {
 	db.close();
 }
-</code></pre>
+```
