@@ -3,7 +3,7 @@ Now can make some Test for example:
 
 ### - kill one server an show if it continuous to work.
 
-before you kill e.g. usa add some records to the usa cluster.<br/>
+Before you kill e.g. usa add some records to the usa cluster.<br/>
 Now can stop a server (here usa) with the terminal command:
     
     docker stop usa
