@@ -16,6 +16,18 @@ and restart it with (<tt>-a</tt> &#x279c; attach)
 * are the usa-records still available? why? Look at the distributed configuration.
 * is after the restart the distributed configuration the same?
 
+### - add a subclass to Customer.java 
+Add a subclass Purchases to the Customer and save it in the database.
+
+
+public class Customer {
+	private Purchases oPurchases;
+    ...
+    }
+
+* does it work directly?
+* what do you have to consider?
+
 
     
 
