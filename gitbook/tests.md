@@ -17,9 +17,14 @@ and restart it with (<tt>-a</tt> &#x279c; attach)
 * is after the restart the distributed configuration the same?
 
 ### - add a subclass to Customer.java 
-Add a subclass Purchases to the Customer and save it in the database.
+Add a subclass <tt>Purchases</tt> to each Customer and save it in the database.
 
 ```java
+public class Purchases
+{
+  ...
+}
+
 public class Customer {
 	private Purchases oPurchases;
     ...
