@@ -8,12 +8,13 @@ Now can stop a server (here usa) with the terminal command:
     
     docker stop usa
     
-and restart it with
+and restart it with (<tt>-a</tt> -> attach)
 
-    docker start usa
+    docker start -a usa
     
     
-are the usa-records still available? why? Look at the distributed configuration.
+* are the usa-records still available? why? Look at the distributed configuration.
+* is after the restart the con   
 
 
     
