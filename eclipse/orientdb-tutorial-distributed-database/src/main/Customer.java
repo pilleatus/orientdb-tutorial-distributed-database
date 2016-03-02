@@ -16,7 +16,6 @@ public class Customer {
 		this.sStreet= Street;
 		this.sCity =  City;		
 	}
-
 	
 	public String getsSurname() {
 		return sSurname;
@@ -54,21 +53,5 @@ public class Customer {
 	public String toString() {
 		return String.format("Surname: %s  |  Name: %s  |  Address: %s %s",sSurname, sName, sCity, sStreet);
 	}
-
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj)
-//			return true;
-//		if (obj == null)
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		Customer other = (Customer) obj;
-//		if (sSurname == other.sSurname && sName == other.sName) {
-//			return true;
-//		} else {
-//			return false;
-//		}
-//	}
 
 }

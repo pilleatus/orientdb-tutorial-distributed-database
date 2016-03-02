@@ -25,7 +25,10 @@ public class Manager {
 		private String sCurrentIP;
 	
 		void startLoop(){
-	
+			
+			String sInput = "";
+			br = new BufferedReader(new InputStreamReader(System.in));
+
 			System.out.println("welcome, what do you want to do?");
 			System.out.println("'c'   | connect");
 			System.out.println("'d'   | disconnect");
@@ -33,16 +36,12 @@ public class Manager {
 			System.out.println("'r'   | remove");
 			System.out.println("'s'   | show");
 			System.out.println("'q'   | quit");			
-			String sInput = "";
-			br = new BufferedReader(new InputStreamReader(System.in));
-
+			
 	        try{
 	        	sInput = br.readLine();
 	        } catch(Exception e){}
 			
-			
 			if(sInput == null) sInput = "";
-			
 			
 			while (!sInput.equals("quit")&&!sInput.equals("q")) 
 			{
@@ -70,12 +69,12 @@ public class Manager {
 		void connect()
 		{		
 			disconnect();
-			
-			
+						
 			System.out.println("###############  CONNECT  ################");
 			
 			// get available docker names an IPs
 			dockerIPs = new LinkedHashMap<String,String>();
+			
 			if (System.getProperty("os.name").startsWith("Windows")) 
 			{
 		        // includes: Windows 2000,  Windows 95, Windows 98, Windows NT, Windows Vista, Windows XP
@@ -96,7 +95,6 @@ public class Manager {
 					Process p = Runtime.getRuntime().exec(cmd);
 					p.waitFor();
 				    BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
-
 				    String line = "";			
 				    while ((line = reader.readLine())!= null) {    	
 				    	dockerIPs.put(line.split("::")[0],line.split("::")[1]);
@@ -107,12 +105,11 @@ public class Manager {
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-		    	
 		    } 
 			
 			// select server
 			String sIP = "";
-			Pattern p = Pattern.compile("^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+			Pattern p = Pattern.compile("^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"); // IP Pattern
 			br = new BufferedReader(new InputStreamReader(System.in));
 
 			System.out.println("Please select Database-Server or enter IP address:  (e.g. \"172.17.0.3\")\n");
@@ -126,6 +123,7 @@ public class Manager {
 					i++;
 				}				
 			}
+			
 			while (true) {
 				try {
 					sIP = br.readLine();
@@ -269,8 +267,7 @@ public class Manager {
 				db.delete(cR);
 			}
 		}
-		
-	
+			
 		void show()
 		{
 			if(db==null || db.isClosed()) connect();
@@ -314,8 +311,18 @@ public class Manager {
 			// show all customers
 			for (Customer c: lstC) 
 			{
+				String sRID = "";
+				String sClusterName = "";
+				try {
+					sRID = db.getIdentity(c).toString();
+					int iClusterID =  Integer.parseInt(sRID.substring(1).split(":")[0]);
+					sClusterName = db.getClusterNameById(iClusterID);
+				} catch (NumberFormatException e) {
+					e.printStackTrace();
+				}
+				
 				db.detach(c);
-				System.out.println(c);
+				System.out.println(c +"    <--- RID: "+sRID+", Cluster: "+sClusterName);
 			}
 		}
 			
