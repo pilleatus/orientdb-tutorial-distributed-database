@@ -14,7 +14,9 @@ How many? (empty for one)
 Surname: s163  |  Name: n163  |  Address: city163 str163    &lt;-- added to cluster:default
 </code></pre>
 
-If you are connected to china the default cluster is <TT>customer_china</TT>. The source code for adding is like this:
+If you are connected to china the default cluster is <TT>customer_china</TT>. 
+
+The source code for adding is like this:
 ```java
 //ADD A RANDOM CUSTOMER
 Customer c = new Customer("s163","n163","str163","city163");
