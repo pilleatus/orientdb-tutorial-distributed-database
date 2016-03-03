@@ -17,9 +17,10 @@ After the import, your project explorer should be similar with:
 
 In the main package of the project there are three classes:
     
-1. Customer:&ensp; Defines a simple person with name, address...
-2. Main:&ensp; &ensp; &ensp; &ensp;Entry-point for our program
-3. Manager:&ensp;&ensp;Various methods for connecting and modifying the database
+* <tt>Customer</tt>:&ensp; Defines a simple person with name, address...
+* <tt>Main</tt>: &ensp; &ensp; &ensp; &ensp;Entry-point for our program
+* <tt>Manager</tt>: &ensp;&ensp;Various methods for connecting and modifying the database
+
 
 
 
