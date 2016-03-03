@@ -12,7 +12,7 @@ In the console you can interact with the application. The output looks like this
 'q'   | quit
 </code></pre>
 
-### connect()
+### connect()<a><img align="right" width="15%" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/access_db.png?raw=true"/></a>
 
 In the first step, we made a remote connection to a database in our docker-container, type `c` &#x279c; enter.
 On Linux systems the available docker IP's appear:
