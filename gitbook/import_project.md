@@ -2,7 +2,7 @@ In the following chapters we will access and modify the database from Eclipse vi
 For a better start, the authors of the book have already created an example Java-Project.
 Afterwards the methods of the example will be explained. If you understood this example, you can extend or change it and run your own tests.
 
-<a><img align="right" width="10%" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/access_db.png?raw=true"/></a>
+<a><img align="right" width="15%" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/access_db.png?raw=true"/></a>
 
 ## Import Project to Eclipse
 
