@@ -34,11 +34,11 @@ To show the existing Customers you have to press `s`:
 
 Now you have two options:
 
-1. Select customers from all clusters
+1. Select customers from all clusters:
   ```java
     String sSQL = "select * from Customer";
   ```
-1. Select customers from specific cluster e.g.: <TT>customer_china</TT>
+1. Select customers from specific cluster e.g.: <TT>customer_china</TT>:
 
   ```java
   String sSQL = "select * from cluster:customer_usa";
