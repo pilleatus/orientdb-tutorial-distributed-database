@@ -14,7 +14,7 @@ In the console you can interact with the application. The output looks like this
 
 ### connect()
 
-In the first step, we made a remote connection to a database in our docker-container, type 'c' &#x279c; enter.
+In the first step, we made a remote connection to a database in our docker-container, type `c` &#x279c; enter.
 On Linux systems the available docker IP's appear:
 
 <pre style="background-color:black; color:white"><code>Please select Database-Server or enter IP address:  (e.g. "172.17.0.3")
@@ -26,7 +26,7 @@ Available servers from docker:
 </code></pre>
 
 Now you can choose to which of the three Databases you want connect to.
-When you input '2' the application will connect to the usa docker-container with the IP 172.17.0.4. 
+When you input `2` the application will connect to the usa docker-container with the IP 172.17.0.4. 
 Lets look in the source code of the method connection() in Manager.java:
 
 To make a connection over IP to a database we use the keyword "remote:". For authentication, we use the user 'root' and the password 'root'. If you have choosen an other password, by setting up the docker-container you have to change it here accordingly. 
