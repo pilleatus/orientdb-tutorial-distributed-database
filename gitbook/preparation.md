@@ -17,8 +17,8 @@ Otherwise its maybe easier to install a virtual Linux System, for example Virtua
 The programming part of this tutorial is wrote in the programming language Java in combination with the integrated development environment (IDE) Eclipse and a JDK (Java Development Kit). You can download and install the developer package for Java here: https://www.eclipse.org/downloads/ and https://wiki.eclipse.org/Eclipse/Installation or use another IDE of your choice.
 
 ##clone repository
-
-        git clone https://github.com/pilleatus/orientdb-tutorial-distributed-database.git
+<pre style="background-color:black; color:white"><code>git clone https://github.com/pilleatus/orientdb-tutorial-distributed-database.git
+</code></pre>
     
 or download it compressed:
     
