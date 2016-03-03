@@ -15,5 +15,5 @@ In a Docker-Container only the needed processes are running, so there is not so 
 
 If you have never heard about docker, or if you interested, read the well made [docker docs](https://docs.docker.com/).
 
-<div class="gitbook-link">bla
-</div>
+<gitbook-link>bla
+</gitbook-link>
