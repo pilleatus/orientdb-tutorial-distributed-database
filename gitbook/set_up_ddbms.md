@@ -25,7 +25,7 @@ Available servers from docker:
 2: 172.17.0.4:usa
 </code></pre>
 
-Now you can choose to which of the three Databases you want connect to.
+Now you can choose to which of the three databases you want connect to.
 When you input `2` the application will connect to the usa docker-container with the IP 172.17.0.4. 
 Lets look in the source code of the method connection() in Manager.java:
 
