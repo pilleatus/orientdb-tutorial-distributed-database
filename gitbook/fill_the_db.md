@@ -47,7 +47,8 @@ Now you have two options:
 Booth variants execute a SQL query and saves the returned customers in a list. Finally the method prints the customer-list in the console: 
 
 ```java
-List&lt;Customer&gt; lstC = db.query(new OSQLSynchQuery&lt;Customer&gt;(sSQL));
+//SHOW CUSTOMER
+List<Customer> lstC = db.query(new OSQLSynchQuery<Customer>(sSQL));
 for (Customer c: lstC) 
 {
     db.detach(c);
@@ -70,7 +71,8 @@ Surname: s163  |  Name: n163  |  Address: city163 str163 &lt-- removed from clus
 The relevant java-code is:
 
 ```java
-List&lt;Customer&gt; lstC = db.query(new OSQLSynchQuery&lt;Customer&gt;("select * from cluster:customer_china"));
+//REMOVE A RANDOM CUSTOMER
+List<Customer> lstC = db.query(new OSQLSynchQuery<Customer>("select * from cluster:customer_china"));
 Customer cR = lstC.get(new Random().nextInt(lstC.size()));
 db.delete(cR);
 ```
