@@ -14,14 +14,15 @@ In the previous chapter you learned how to connect/disconnect to the database. N
     
     Surname: s163  |  Name: n163  |  Address: city163 str163    <-- added to cluster:default
     
-If you are connected to china the default cluster is <TT>customer_china</TT>. The source code for adding is:
+If you are connected to china the default cluster is <TT>customer_china</TT>. The source code for adding is like this:
 ```java
+//ADD A RANDOM CUSTOMER
 Customer c = new Customer("s163","n163","str163","city163");
 db.save(c);	
 ```
 
 ###show()
-To show the existing Customers you have to press 's':
+To show the existing Customers you have to press `s`:
 
 <pre style="background-color:black; color:white"><code>Select clustername (empty for default):
 0: customer_eu
@@ -29,7 +30,7 @@ To show the existing Customers you have to press 's':
 2: customer_china
 </code></pre>
 
-now you have two options:
+Now you have two options:
 
 1. Select customers from all clusters
   ```java
