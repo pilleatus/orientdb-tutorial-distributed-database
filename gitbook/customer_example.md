@@ -1,6 +1,6 @@
 # Customer Example
 One example application for a DDBMS could be a international webshop. For a better access time to the server, there are three servers distributed on the continents. A server in the USA, one in the EU and one in China.
-These structure is similar to the example in the official OrientDB docs. Instead of class Client, we will use a the class name Customer.
+These structure is similar to the [example](http://orientdb.com/docs/last/Distributed-Sharding.html) in the official OrientDB docs. Instead of class Client, we will use a the class name Customer.
 To decrease the risk for a data lost, well will store each cluster on a second server.
 
 
