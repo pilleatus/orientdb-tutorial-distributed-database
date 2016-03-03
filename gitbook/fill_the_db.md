@@ -44,7 +44,7 @@ Now you have two options:
   String sSQL = "select * from cluster:customer_usa";
   ```
 
-Booth variants execute a SQL query and saves the returned customers in a list. Finally the method print the customer-list: 
+Booth variants execute a SQL query and saves the returned customers in a list. Finally the method prints the customer-list in the console: 
 
 ```java
 List&lt;Customer&gt; lstC = db.query(new OSQLSynchQuery&lt;Customer&gt;(sSQL));
