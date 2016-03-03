@@ -81,16 +81,16 @@ Now you can also start the other two servers `eu` and `china`. Just open two new
 With the `run` command you should have created and started three containers now. And you can go ahead with setting up eclipse.  
 
 If you will stop, start or restart a container you can use the following commands (here container usa).
-<pre style="background-color:black; color:white"><code>docker stop usa                 #start container usa
-docker start -a usa             #stop container usa
-docker restart usa              #restart container usa
+<pre style="background-color:black; color:white"><code>docker stop usa                             #start container usa
+docker start -a usa                         #stop container usa
+docker restart usa                          #restart container usa
 </code></pre>
 
 some other useful docker commands:
-<pre style="background-color:black; color:white"><code>docker ps                               #list all running containers
-docker images                           #list all images
-docker volume ls                        #list all volumes
-docker stop $(docker ps -a -q)          #stop all containers
+<pre style="background-color:black; color:white"><code>docker ps                                   #list all running containers
+docker images                               #list all images
+docker volume ls                            #list all volumes
+docker stop $(docker ps -a -q)              #stop all containers
 </code></pre>
 
 cleaning up:
