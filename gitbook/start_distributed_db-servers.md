@@ -8,13 +8,13 @@ First of all we will create an image for a DDBMS-Server. Later it is possible to
 To create a new Image with some changes, you can use a Dockerfile. We already added the following Dockerfile to the repository:
 
 ####Dockerfile:
+```bash
+FROM orientdb/orientdb:latest
+#FROM orientdb/orientdb:2.1.5
 
-    FROM orientdb/orientdb:latest
-    #FROM orientdb/orientdb:2.1.5
-
-    COPY ./default-distributed-db-config.json /orientdb/config/default-distributed-db-config.json
-    COPY ./server.sh /orientdb/bin/server.sh
-    
+COPY ./default-distributed-db-config.json /orientdb/config/default-distributed-db-config.json
+COPY ./server.sh /orientdb/bin/server.sh
+```    
 The first Line defines the under-laying image, in this case from user "orientdb" the image "orientdb" and the latest version. The first COPY command overwrites the configuration for our distributed system in the container. 
 
 ####default-distributed-db-config.json:
