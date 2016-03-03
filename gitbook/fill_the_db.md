@@ -58,7 +58,7 @@ for (Customer c: lstC)
 Before printing <tt>c</tt>, a detach is necessary. "*With the detach method all data contained in the document will be copied in the associated object*"[[OrientDB#detach](http://orientdb.com/docs/last/Object-Database.html#detach)]. Without detach the values are <tt>null</tt>.
 
 ###remove()
-To remove a customer you have to press 'r'. Then a random customer will be removed from your current cluster:
+To remove a customer you have to press `r`. Then a random customer will be removed from your current cluster:
 
 <pre style="background-color:black; color:white"><code>and now (c|d|a|r|s|q)?
 r
@@ -66,6 +66,8 @@ How many? (empty for one)
 
 Surname: s163  |  Name: n163  |  Address: city163 str163 &lt-- removed from cluster:customer_china
 </code></pre>
+
+The relevant java-code is:
 
 ```java
 List&lt;Customer&gt; lstC = db.query(new OSQLSynchQuery&lt;Customer&gt;("select * from cluster:customer_china"));
