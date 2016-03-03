@@ -83,7 +83,7 @@ With the run command you should have created and started three containers now. A
 
 If you will stop, start or restart a container you can use the following commands (here container usa).
 <pre style="background-color:black; color:white"><code>docker stop usa                 #start container usa
-docker start usa                #stop container usa
+docker start -a usa             #stop container usa
 docker restart usa              #restart container usa
 </code></pre>
 
