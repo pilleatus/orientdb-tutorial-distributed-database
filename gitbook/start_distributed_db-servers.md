@@ -1,6 +1,6 @@
 # Start distributed DB-Servers
 At this point you should have already installed the docker deamon and you may have already checked the installation with the `docker run hello_world` command.
-For the database-instances we will use the official [OrientDB package](
+For the database-instances we will use the official [docker OrientDB package](
 https://hub.docker.com/r/orientdb/orientdb/).
 
 ###1. Create an image with the configuration for the servers
