@@ -1,7 +1,4 @@
-<a><img align="right" width="25%" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/add_customer.png?raw=true"/></a>
-
-
-# Fill the Database
+# Fill the Database<a><img align="right" width="25%" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/add_customer.png?raw=true"/></a>
 The output of the docker-container shows the logs from orientDB-server.  
 If you have already connected to a DB-server, it should look like:  
 
