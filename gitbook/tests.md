@@ -1,7 +1,7 @@
 # Tests
-Now can make some Test for example:
+Now can make some tests, for example:
 
-### - kill one server an show if it continuous to work.
+### - Kill one server an show if it continuous to work.
 
 Before you kill e.g. usa add some records to the usa cluster.<br/>
 Now can stop a server (here usa) with the terminal command:
@@ -16,7 +16,7 @@ and restart it with (<tt>-a</tt> &#x279c; attach)
 * are the usa-records still available? why? Look at the distributed configuration.
 * is after the restart the distributed configuration the same?
 
-### - add a subclass to Customer.java 
+### - Add a subclass to Customer.java 
 Add a subclass <tt>Purchases</tt> to each Customer and save it in the database.
 
 ```java
