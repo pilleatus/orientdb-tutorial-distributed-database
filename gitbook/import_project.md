@@ -9,7 +9,7 @@ First of all you have to import the example project in eclipse:
 1.Start Eclipse <br/>
 2.File &#x279c; Import &#x279c; General &#x279c; Existing Projects to Workspace
 
-Select the "orientdb-tutorial-distributed-database" folder from the downloaded repository.
+Select the "orientdb-tutorial-distributed-database" folder from the downloaded repository:</br>
     ![](./images/project-import.png)
 
 After the import, your project explorer should be similar with:
