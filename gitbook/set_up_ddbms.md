@@ -26,8 +26,7 @@ Available servers from docker:
 </code></pre>
 
 Now you can choose to which of the three databases you want connect to.
-When you input `2` the application will connect to the usa docker-container with the IP 172.17.0.4. 
-Lets look in the source code of the method connection() in Manager.java:
+When you input `2` the application will connect to the usa docker-container with the IP: 172.17.0.4. Lets look in the source code of the method connection() in Manager.java:
 
 To make a connection over IP to a database we use the keyword "remote:". For authentication, we use the user 'root' and the password 'root'. If you have choosen an other password, by setting up the docker-container you have to change it here accordingly. 
 
