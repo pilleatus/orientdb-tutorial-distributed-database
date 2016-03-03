@@ -27,8 +27,7 @@ The names of the cluster should be defined with ```<class>_<node>```. Therefor w
 You can get further information [here](
 http://orientdb.com/docs/2.0/orientdb.wiki/Distributed-Configuration.html#default-distributed-db-configjson).
 
-
-
+We edit the config-file as follow:
 ```json
 {
   "autoDeploy": true,
