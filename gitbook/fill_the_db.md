@@ -6,8 +6,7 @@ If you have already connected to a DB-server, it should look like:
 The servers use for sharing the config [Hazelcast](https://hazelcast.com/).
 
 ###add()
-In the previous chapter you learned how to connect/disconnect to the database. Now you will add some Customer.<br/>
-By typing 'a' for add, a random Customer will be added to the default cluster of your connected server.
+In the previous chapter you learned how to connect/disconnect to the database. Now you will add some customers. By typing `a` for add, a random customer will be added to the default cluster of your connected server.
 
     and now (c|d|a|r|s|q)?
     a
