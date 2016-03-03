@@ -81,7 +81,7 @@ db.getEntityManager().registerEntityClass(Customer.class);
 
 
 ### disconnect()
-By typing 'd' you can close the connection to the server.
+By typing `d` you can close the connection to the server.
 ```java
 // disconnect database
 if( db!=null && !db.isClosed() )
