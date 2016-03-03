@@ -18,10 +18,14 @@ The first line defines the under-laying image. In our case, the latest version o
 
 ####default-distributed-db-config.json:
 In this file you can define the behavior of the distributed servers. Additionally it is possible to define where the clusters will be stored.
-For our example we define three clusters (`customer_usa`, `customer_eu`, `customer_china`).  
-The names of the cluster should be defined with ```<class>_<node>```. Therefor we will use three servers (`usa`,`eu`,`china`).  
-You can get further information on:
-http://orientdb.com/docs/2.0/orientdb.wiki/Distributed-Configuration.html#default-distributed-db-configjson    
+For our example we define three clusters:
+1. `customer_usa`
+2. `customer_eu`
+3. `customer_china`
+  
+The names of the cluster should be defined with ```<class>_<node>```. Therefor we will use three servers with follow node names: `usa`,`eu`,`china`.
+You can get further information [here](
+http://orientdb.com/docs/2.0/orientdb.wiki/Distributed-Configuration.html#default-distributed-db-configjson).
 
 
 
