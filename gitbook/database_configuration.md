@@ -57,19 +57,19 @@ http://orientdb.com/docs/2.0/orientdb.wiki/Distributed-Configuration.html#defaul
 
 #### Create the docker image:
 With the following commands we create our new image. Navigate to the docker folder in the repository
-
-    cd docker
+<pre style="background-color:black; color:white"><code>cd docker
+</code></pre>
     
 And start building the image with:
-
-    docker build -t nickname/customer_example:1.0 .
+<pre style="background-color:black; color:white"><code>docker build -t nickname/customer_example:1.0 .
+</code></pre>
     
 Docker starts now building a new image based on the Dockerfile commands. The name of the image is `nickname/costumer_example` and the version is `1.0`. The last argument defines where docker searches for a Dockerfile
 
 ###2. Create and start (run command) some servers
 With the next instruction we run a docker container with the name `usa` using our previously created image. When the server is started you have to choose a password for the root user and enter the name for the server, for our first container `usa`. 
-
-    docker run --name usa -v /orientdb/config -it nickname/customer_example:1.0 dserver.sh
+<pre style="background-color:black; color:white"><code>docker run --name usa -v /orientdb/config -it nickname/customer_example:1.0 dserver.sh
+</code></pre>
 
 The `-it` flags allocate a pseudo-TTY connection to the container.  
 The `-v /orientdb/config` defines a volume for the corresponding directory. When you start a Docker Container, the changes on this container getting lost when you stop it afterwards without committing your changes. With Volumes you can specify a directory and save them persistent on your file-system. In this way we must setup the password and the name for the server only at the first start of our container.  
@@ -82,26 +82,25 @@ Now you can also start the other two servers `eu` and `china`. Just open two new
 With the run command you should have created and started three containers now. And you can go ahead with setting up eclipse.  
 
 If you will stop, start or restart a container you can use the following commands (here container usa).
+<pre style="background-color:black; color:white"><code>docker stop usa                 #start container usa
+docker start usa                #stop container usa
+docker restart usa              #restart container usa
+</code></pre>
 
-    docker stop usa                 #start container usa
-    docker start usa                #stop container usa
-    docker restart usa              #restart container usa
-    
 some other useful docker commands:
+<pre style="background-color:black; color:white"><code>docker ps                               #list all running containers
+docker images                           #list all images
+docker volume ls                        #list all volumes
+docker stop $(docker ps -a -q)          #stop all containers
+</code></pre>
 
-    docker ps                               #list all running containers
-    docker images                           #list all images
-    docker volume ls                        #list all volumes
-    docker stop $(docker ps -a -q)          #stop all containers
-   
 cleaning up:
-    
-    docker rm usa                               #remove container usa
-    docker rmi nickname/customer_example:1.0    #remove correlated image
-    docker rm $(docker ps -a -q)                #remove all containers
-    docker rmi $(docker images -q)              #remove all images
-    docker volume rm $(docker volume ls -q)     #remove all volumes
-
+<pre style="background-color:black; color:white"><code>docker rm usa                               #remove container usa
+docker rmi nickname/customer_example:1.0    #remove correlated image
+docker rm $(docker ps -a -q)                #remove all containers
+docker rmi $(docker images -q)              #remove all images
+docker volume rm $(docker volume ls -q)     #remove all volumes
+</code></pre>
 
 find more on:
 https://docs.docker.com/engine/quickstart/
