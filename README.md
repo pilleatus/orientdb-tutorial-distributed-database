@@ -15,13 +15,5 @@ In a Docker-Container only the needed processes are running, so there is not so 
 
 If you have never heard about docker, or if you interested, read the well made [docker docs](https://docs.docker.com/).
 
-{
-    "plugins": [
-        "hide-element"
-    ],
-    "pluginsConfig": {
-        "hide-element": {
-            "elements": [".gitbook-link"]
-        }
-    }
-}
+<div id="gitbook-link">bla
+</div>
