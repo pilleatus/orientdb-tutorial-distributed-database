@@ -1,7 +1,6 @@
 In the following chapters we will access and modify the database from Eclipse via Java.
 For a better start, the authors of the book have already created an example Java-Project.
 Afterwards the methods of the example will be explained. If you understood this example, you can extend or change the example project and run your own tests.
-
 ## Import Project to Eclipse
 
 First of all you have to import the example project in eclipse:
