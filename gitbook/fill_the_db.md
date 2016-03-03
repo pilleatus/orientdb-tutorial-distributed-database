@@ -68,7 +68,7 @@ How many? (empty for one)
 Surname: s163  |  Name: n163  |  Address: city163 str163 &lt-- removed from cluster:customer_china
 </code></pre>
 
-The relevant java-code is:
+The relevant Java code is:
 
 ```java
 //REMOVE A RANDOM CUSTOMER
