@@ -78,7 +78,7 @@ The `-it` flags allocate a pseudo-TTY connection to the container. The `-v /orie
 Now you can also start the other two servers `eu` and `china`. Just open two new terminals and change in the command the container-name from `usa` to `eu` and at the third server to `china`. When the container is started, you also have to enter a root password again and set the node name accordingly to the container name.
 
 ### Dealing with containers
-With the run command you should have created and started three containers now. And you can go ahead with setting up eclipse.  
+With the `run` command you should have created and started three containers now. And you can go ahead with setting up eclipse.  
 
 If you will stop, start or restart a container you can use the following commands (here container usa).
 <pre style="background-color:black; color:white"><code>docker stop usa                 #start container usa
