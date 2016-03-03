@@ -58,7 +58,7 @@ Bellow is the edited config-file:
 ```    
 
 #### Create the docker image:
-With the following commands we create our new image. Navigate to the docker folder in the repository
+With the following commands we create our new image. Navigate to the docker folder in the repository:
 <pre style="background-color:black; color:white"><code>cd docker
 </code></pre>
     
