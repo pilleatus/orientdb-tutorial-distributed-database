@@ -9,7 +9,7 @@ To run a application with Docker you first have to install the Docker-Deamon. Me
 https://docs.docker.com/engine/installation
 
 If you are using Windows there will be an extra virtualisation Layer between Docker and Windows. That's because docker needs some Linux-Kernel functions.
-If you have time to experiment or if you need this application running on Windows, you're welcome to share your experience (pull request) ;).
+If you have time to experiment or if you need this application running on Windows, you're welcome to share your experience (pull request) :smile: .
 Otherwise its maybe easier to install a virtual Linux System, for example [Virtualbox](https://www.virtualbox.org/) and use it for the tutorial.
 
 ##Install Eclipse
