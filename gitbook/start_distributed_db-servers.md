@@ -73,30 +73,27 @@ With the next instruction we run a docker container with the name `usa` using ou
 <pre style="background-color:black; color:white"><code>docker run --name usa -v /orientdb/config -it nickname/customer_example:1.0 dserver.sh
 </code></pre>
 
-The `-it` flags allocate a pseudo-TTY connection to the container.  
-The `-v /orientdb/config` defines a volume for the corresponding directory. When you start a Docker Container, the changes on this container getting lost when you stop it afterwards without committing your changes. With Volumes you can specify a directory and save them persistent on your file-system. In this way we must setup the password and the name for the server only at the first start of our container.  
-For more information take a look at:
-https://docs.docker.com/engine/userguide/containers/dockervolumes/  
+The `-it` flags allocate a pseudo-TTY connection to the container. The `-v /orientdb/config` defines a volume for the corresponding directory. When you start a Docker Container, the changes on this container getting lost when you stop it afterwards without committing your changes. With Volumes you can specify a directory and save them persistent on your file-system. In this way we must setup the password and the name for the server only at the first start of our container. For more information take a look at [docker-volumes](https://docs.docker.com/engine/userguide/containers/dockervolumes/).  
 
 Now you can also start the other two servers `eu` and `china`. Just open two new terminals and change in the command the container-name from `usa` to `eu` and at the third server to `china`. When the container is started, you also have to enter a root password again and set the node name accordingly to the container name.
 
 ### Dealing with containers
-With the run command you should have created and started three containers now. And you can go ahead with setting up eclipse.  
+With the `run` command you should have created and started three containers now. And you can go ahead with setting up eclipse.  
 
 If you will stop, start or restart a container you can use the following commands (here container usa).
-<pre style="background-color:black; color:white"><code>docker stop usa                 #start container usa
-docker start -a usa             #stop container usa
-docker restart usa              #restart container usa
+<pre style="background-color:black; color:white"><code>docker stop usa                             #start container usa
+docker start -a usa                         #stop container usa
+docker restart usa                          #restart container usa
 </code></pre>
 
-some other useful docker commands:
-<pre style="background-color:black; color:white"><code>docker ps                               #list all running containers
-docker images                           #list all images
-docker volume ls                        #list all volumes
-docker stop $(docker ps -a -q)          #stop all containers
+Some other useful docker commands:
+<pre style="background-color:black; color:white"><code>docker ps                                   #list all running containers
+docker images                               #list all images
+docker volume ls                            #list all volumes
+docker stop $(docker ps -a -q)              #stop all containers
 </code></pre>
 
-cleaning up:
+Cleaning up:
 <pre style="background-color:black; color:white"><code>docker rm usa                               #remove container usa
 docker rmi nickname/customer_example:1.0    #remove correlated image
 docker rm $(docker ps -a -q)                #remove all containers
@@ -104,7 +101,7 @@ docker rmi $(docker images -q)              #remove all images
 docker volume rm $(docker volume ls -q)     #remove all volumes
 </code></pre>
 
-find more on:
+Find more on:
 https://docs.docker.com/engine/quickstart/
 
 
