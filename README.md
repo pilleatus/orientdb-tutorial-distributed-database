@@ -1,5 +1,3 @@
-<div div class="gitbook-link">
-<a href="https://pilleatus.gitbooks.io/orientdb-tutorial-distributed-database/content/">Read on Gitbook</a></div>
 # Introduction
 
 In this Tutorial we will setup a Distributed Database with Docker Containers. OrientDB distributed concept is a Multi-Master topology. We will split of a class in three logical [clusters](http://orientdb.com/docs/last/Tutorial-Clusters.html) and store each cluster on two Servers. In this way we improve the reliability and the scalability of our system.
@@ -17,5 +15,5 @@ In a Docker-Container only the needed processes are running, so there is not so 
 
 If you have never heard about docker, or if you interested, read the well made [docker docs](https://docs.docker.com/).
 
-<gitbook-link>bla
-</gitbook-link>
+<div div class="gitbook-link">
+<a href="https://pilleatus.gitbooks.io/orientdb-tutorial-distributed-database/content/">Read on Gitbook</a></div>
