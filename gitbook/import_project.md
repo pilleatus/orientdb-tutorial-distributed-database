@@ -6,7 +6,7 @@ Afterwards the methods of the example will be explained. If you understood this 
 First of all you have to import the example project in eclipse:
 
 **1.** Start Eclipse <br/>
-**2.** File &#x279c; Import &#x279c; General &#x279c; Existing Projects to Workspace
+**2.** File &#x279c; Import &#x279c; General &#x279c; Existing Projects to Workspace<br/>
 **3.** Select the "orientdb-tutorial-distributed-database" folder from the downloaded repository
 
 ![](./images/project-import.png)
