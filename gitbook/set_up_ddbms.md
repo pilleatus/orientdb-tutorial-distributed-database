@@ -68,7 +68,7 @@ db.command(new OCommandSQL(sSQL)).execute();
 ```
 
 
-in this example the method will create these three clusters:
+In this example the method will create these three clusters:
 * customer_eu
 * customer_usa
 * customer_china
