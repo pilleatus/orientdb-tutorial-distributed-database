@@ -86,14 +86,14 @@ docker start -a usa                         #stop container usa
 docker restart usa                          #restart container usa
 </code></pre>
 
-some other useful docker commands:
+Some other useful docker commands:
 <pre style="background-color:black; color:white"><code>docker ps                                   #list all running containers
 docker images                               #list all images
 docker volume ls                            #list all volumes
 docker stop $(docker ps -a -q)              #stop all containers
 </code></pre>
 
-cleaning up:
+Cleaning up:
 <pre style="background-color:black; color:white"><code>docker rm usa                               #remove container usa
 docker rmi nickname/customer_example:1.0    #remove correlated image
 docker rm $(docker ps -a -q)                #remove all containers
@@ -101,7 +101,7 @@ docker rmi $(docker images -q)              #remove all images
 docker volume rm $(docker volume ls -q)     #remove all volumes
 </code></pre>
 
-find more on:
+Find more on:
 https://docs.docker.com/engine/quickstart/
 
 
