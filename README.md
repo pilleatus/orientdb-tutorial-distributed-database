@@ -4,7 +4,7 @@ In this Tutorial we will setup a Distributed Database with Docker Containers. Or
 
 On the OrientDB [Manual Sites](http://orientdb.com/docs/last/Distributed-Architecture.html) are already the basics good explained, to understand how a distributed System works.
 
-In this Tutorial we will make an implementation, similar to the example in the OrientDB doc's. 
+In this book we will make an implementation, similar to the example in the OrientDB doc's. 
 
 ![Figure 1-1](gitbook/images/schema.png)
 
