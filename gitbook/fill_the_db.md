@@ -7,13 +7,13 @@ The servers use for sharing the config [Hazelcast](https://hazelcast.com/).
 
 ###add()
 In the previous chapter you learned how to connect/disconnect to the database. Now you will add some customers. By typing `a` for add, a random customer will be added to the default cluster of your connected server:
+<pre style="background-color:black; color:white"><code>and now (c|d|a|r|s|q)?
+a
+How many? (empty for one)
 
-    and now (c|d|a|r|s|q)?
-    a
-    How many? (empty for one)
-    
-    Surname: s163  |  Name: n163  |  Address: city163 str163    <-- added to cluster:default
-    
+Surname: s163  |  Name: n163  |  Address: city163 str163    &lt;-- added to cluster:default
+</code></pre>
+
 If you are connected to china the default cluster is <TT>customer_china</TT>. The source code for adding is like this:
 ```java
 //ADD A RANDOM CUSTOMER
