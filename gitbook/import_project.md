@@ -1,4 +1,4 @@
-<a><img align="right" width="15%" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/access_db.png?raw=true"/></a>
+<a><img align="right" width="10%" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/access_db.png?raw=true"/></a>
 
 
 In the following chapters we will access and modify the database from Eclipse via Java.
