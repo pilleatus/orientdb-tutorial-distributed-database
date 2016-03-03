@@ -1,4 +1,4 @@
-<a><img align="right" width="15%" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/setup_db.png?raw=true"/></a><h1> Set-up the DDBMS</h1>
+#Set-up the DDBMS<a><img align="right" width="15%" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/setup_db.png?raw=true"/></a>
 Now you can run the main method of the Java project.  
 Right click on Main.java &#x279c; Run As &#x279c; Java Application.<br/>
 In the console you can interact with the application. The output looks like this: 
