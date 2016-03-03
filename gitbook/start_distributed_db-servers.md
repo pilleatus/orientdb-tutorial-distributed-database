@@ -14,7 +14,7 @@ FROM orientdb/orientdb:latest
 COPY ./default-distributed-db-config.json /orientdb/config/default-distributed-db-config.json
 COPY ./server.sh /orientdb/bin/server.sh
 ```    
-The first Line defines the under-laying image, in this case from user "orientdb" the image "orientdb" and the latest version. The first COPY command overwrites the configuration for our distributed system in the container. 
+The first Line defines the under-laying image, in this case from user "orientdb" the image "orientdb" and the latest version. The COPY command overwrites the configuration for our distributed system in the container. 
 
 ####default-distributed-db-config.json:
 In this file you can define the behavior of the distributed Servers. Additionally it is possible to define where the clusters will be stored.
