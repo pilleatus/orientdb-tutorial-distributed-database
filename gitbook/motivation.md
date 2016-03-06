@@ -1,10 +1,10 @@
 # Motivation
 <a title="By Martin Grandjean [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File%3ASocial_Network_Analysis_Visualization.png"><img align="right" width="35%" alt="Social Network Analysis Visualization" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Social_Network_Analysis_Visualization.png/512px-Social_Network_Analysis_Visualization.png"></a>
 
-In today's world the processing of Big Data takes an important role.
+In today's world the processing of **Big Data** takes an important role.
 
 For managing and storing big amounts of data more than a single database is necessary. In response to this situation distributed database systems have been developed.
-DDBMS (distributed database management systems) are used if a "Single DBMS" reaches its limits. Reasons for this could be:
+**DDBMS** (distributed database management systems) are used if a "Single DBMS" reaches its limits. Reasons for this could be:
 
 
 1. The volume of data is to big, so it can't be stored on a single DBMS 
