@@ -1,10 +1,10 @@
 # Start distributed DB-Servers
-At this point you should have already installed the docker deamon and you may have already checked the installation with the `docker run hello_world` command.
-For the database-instances we will use the official [docker OrientDB package](
+At this point you should have already installed the Docker-Deamon and you may have already checked the installation with the `docker run hello_world` command.
+For the database-instances we will use the official [Docker OrientDB package](
 https://hub.docker.com/r/orientdb/orientdb/).
 
 ###1. Create an image with the configuration for the servers
-First of all we will create an image for a DDBMS-Server. Later it is possible to create some instances with the generated image to start up some DB-Servers. To create a new Image with some changes, you can use a Dockerfile. We already added the following Dockerfile to the repository:
+First of all we will create an image for a DDBMS-Server. Later it is possible to create some instances with the generated image to start up some DB-Servers. To create a new image with some changes, you can use a Dockerfile. We already added the following Dockerfile to the repository:
 
 ####Dockerfile:
 ```bash
@@ -23,7 +23,7 @@ For our example we define three clusters:
 2. `customer_eu`
 3. `customer_china`
   
-The names of the cluster should be defined with ```<class>_<node>```. Therefor we will use three servers with follow node names: `usa`,`eu`,`china`.
+The names of the cluster should be defined as```<class>_<node>```. Therefor we will use three servers with following node names: `usa`,`eu`,`china`.
 You can get further information [here](
 http://orientdb.com/docs/2.0/orientdb.wiki/Distributed-Configuration.html#default-distributed-db-configjson).
 
