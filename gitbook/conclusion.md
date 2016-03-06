@@ -1,6 +1,6 @@
 # Conclusion
 
-In this Tutorial you have learned how to setup an distributed database, how to use Docker to run multiple servers. Additional now you know how to save data in the database. The authors of the book hopes that the tutorial was useful to you and that you have leard more about distrubuted databases. Now you can make your one tests with the distributed database of OrientDB.
+In this Tutorial you have learned how to setup an distributed database, how to use Docker to run multiple servers and how to access the database via Java. Additional now you know how to save and modify data in the database. The authors of the book hopes that the tutorial was useful to you and that you have leard more about distrubuted databases. Now you can make your one tests with the distributed database of OrientDB.
     
     
 # Troubleshooting
