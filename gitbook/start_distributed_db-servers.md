@@ -23,7 +23,7 @@ For our example we define three clusters:
 2. `customer_eu`
 3. `customer_china`
   
-The names of the cluster should be defined as```<class>_<node>```. Therefor we will use three servers with following node names: `usa`,`eu`,`china`.
+The names of the cluster should be defined as ```<class>_<node>```. Therefor we will use three servers with following node names: `usa`,`eu`,`china`.
 You can get further information [here](
 http://orientdb.com/docs/2.0/orientdb.wiki/Distributed-Configuration.html#default-distributed-db-configjson).
 
