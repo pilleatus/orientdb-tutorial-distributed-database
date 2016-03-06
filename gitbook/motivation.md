@@ -8,7 +8,7 @@ For managing and storing big amounts of data more than a single database is nece
 
 
 1. The volume of data is to big, so it can't be stored on a single DBMS 
-1. The DBMS can't process the large quantity of user requests in an acceptable time.
+1. The DBMS can't process the large quantity of user requests in an acceptable time
 1. Warranty for availability and redundancy of the data are not given on a single system 
 
 
