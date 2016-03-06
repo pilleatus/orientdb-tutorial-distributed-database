@@ -1,10 +1,10 @@
 # Tests
 Now we can make some tests, for example:
 
-### - Kill one server and show if the model continuous to work.
+### - Kill one server and show if the model continues to work.
 
-Before you kill e.g. usa add some records to the usa cluster.<br/>
-Now can stop a server (here usa) with the terminal command:
+Before you kill (e.g. usa) add some records to the usa cluster.<br/>
+Now stop a server (here usa) with the terminal command:
     
     docker stop usa
     
