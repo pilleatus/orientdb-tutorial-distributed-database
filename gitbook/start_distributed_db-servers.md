@@ -66,7 +66,7 @@ And start building the image with:
 <pre style="background-color:black; color:white"><code>docker build -t nickname/customer_example:1.0 .
 </code></pre>
     
-Docker starts now building a new image based on the Dockerfile commands. The name of the image is `nickname/costumer_example` and the version is `1.0`. The last argument defines where Docker searches for a Dockerfile
+Docker starts now building a new image based on the Dockerfile commands. The name of the image is `nickname/costumer_example` and the version is `1.0`. The last argument defines where Docker searches for a Dockerfile.
 
 ###2. Create and start (run command) some servers
 With the next instruction we run a docker container with the name `usa` using our previously created image. When the server is started you have to choose a password for the root user and enter the name for the server, for our first container `usa`. 
