@@ -1,9 +1,9 @@
 # Fill the Database<a><img align="right" width="25%" src="https://github.com/pilleatus/orientdb-tutorial-distributed-database/blob/master/gitbook/images/add_customer.png?raw=true"/></a>
-The output of the docker-container shows the logs from orientDB-server.  
-If you have already connected to a DB-server, it should look like:  
+The output of the Docker-Container shows the logs from orientDB-server.  
+If you have already connected to a DB-server, it should look like this:  
 
 ![](./images/server_output_1.png)
-The servers use for sharing the config [Hazelcast](https://hazelcast.com/).
+The servers use the config [Hazelcast](https://hazelcast.com/) for sharing.
 
 ###add()
 In the previous chapter you learned how to connect/disconnect to the database. Now you will add some customers. By typing `a` for add, a random customer will be added to the default cluster of your connected server:
@@ -34,11 +34,11 @@ To show the existing Customers you have to press `s`:
 
 Now you have two options:
 
-1. Select customers from all clusters:
+1. Select customers from all the clusters:
   ```java
     String sSQL = "select * from Customer";
   ```
-1. Select customers from specific cluster e.g.: <TT>customer_china</TT>:
+1. Select customers from a specific cluster e.g.: <TT>customer_china</TT>:
 
   ```java
   String sSQL = "select * from cluster:customer_usa";
@@ -56,7 +56,7 @@ for (Customer c: lstC)
 }
 ```
   
-Before printing <tt>c</tt>, a detach is necessary. "*With the detach method all data contained in the document will be copied in the associated object*"[[OrientDB#detach](http://orientdb.com/docs/last/Object-Database.html#detach)]. Without detach the values are <tt>null</tt>.
+Before printing <tt>c</tt>, a detach is necessary. "*With the detach method all data contained in the document will be copied in the associated object*"[[OrientDB#detach](http://orientdb.com/docs/last/Object-Database.html#detach)]. Without detaching the values are <tt>null</tt>.
 
 ###remove()
 To remove a customer you have to press `r`. Then a random customer will be removed from your current cluster:
