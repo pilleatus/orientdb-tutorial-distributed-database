@@ -3,7 +3,7 @@ For a better start, the authors of the book have already created an example Java
 Afterwards the methods of the example will be explained. If you understood this example, you can extend or change the example project and run your own tests.
 ## Import Project to Eclipse
 
-First of all you have to import the example project in eclipse:
+First of all you have to import the example project into eclipse:
 
 **1.** Start Eclipse <br/>
 **2.** File &#x279c; Import &#x279c; General &#x279c; Existing Projects to Workspace<br/>
@@ -11,7 +11,7 @@ First of all you have to import the example project in eclipse:
 
 ![](./images/project-import.png)
 
-After the import, your project explorer should be similar with:
+After the import, your project explorer should look similar to this one:
 
 ![](./images/project-explorer.png)
 
