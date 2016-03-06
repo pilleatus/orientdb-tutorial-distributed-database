@@ -57,8 +57,8 @@ Bellow is the edited config-file:
 }
 ```    
 
-#### Create the docker image:
-With the following commands we create our new image. Navigate to the docker folder in the repository:
+#### Create the Docker image:
+With the following commands we create our new image. Navigate to the Docker folder in the repository:
 <pre style="background-color:black; color:white"><code>cd docker
 </code></pre>
     
@@ -73,7 +73,8 @@ With the next instruction we run a docker container with the name `usa` using ou
 <pre style="background-color:black; color:white"><code>docker run --name usa -v /orientdb/config -it nickname/customer_example:1.0 dserver.sh
 </code></pre>
 
-The `-it` flags allocate a pseudo-TTY connection to the container. The `-v /orientdb/config` defines a volume for the corresponding directory. When you start a Docker Container, the changes on this container getting lost when you stop it afterwards without committing your changes. With Volumes you can specify a directory and save them persistent on your file-system. In this way we must setup the password and the name for the server only at the first start of our container. For more information take a look at [docker-volumes](https://docs.docker.com/engine/userguide/containers/dockervolumes/).  
+The `-it` flags allocate a pseudo-TTY connection to the container. The `-v /orientdb/config` defines a volume for the corresponding directory. Without a defined volume, all changes on the Docker-Container getting lost with a restart. In response to this, we define volumes on the container. With Volumes you can specify a directory and save it persistent on your file-system. 
+In this way we must setup the password and the name for the server only at the first start of our container. For more information take a look at [docker-volumes](https://docs.docker.com/engine/userguide/containers/dockervolumes/).  
 
 Now you can also start the other two servers `eu` and `china`. Just open two new terminals and change in the command the container-name from `usa` to `eu` and at the third server to `china`. When the container is started, you also have to enter a root password again and set the node name accordingly to the container name.
 
