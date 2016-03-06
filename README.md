@@ -10,7 +10,7 @@ In this book we will create an implementation, similar to the example in the Ori
 
 This may help you understand and test the capabilities and the limits of such a distributed database.
 
-For setting up some DB-Servers on the same sub-network there are many possibilities, for example using virtual machines. In this Tutorial we will use Docker, since it will not generate so much overhead as a fully virtualized operating system. 
+For setting up some DB-Servers on the same sub-network there are many possibilities, for example using virtual machines. In this tutorial we will use Docker, since it will not generate so much overhead as a fully virtualized operating system. 
 In a Docker-Container only the needed processes are running, therefore not so much computing capacity is needed.  
 
 If you have never heard about docker, or if you interested, read the well made [docker docs](https://docs.docker.com/).
