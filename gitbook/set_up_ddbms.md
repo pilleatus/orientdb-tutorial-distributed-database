@@ -14,23 +14,23 @@ In the console you can interact with the application. The output looks like this
 
 ### connect()
 
-In the first step, we made a remote connection to a database in our docker-container, type `c` &#x279c; enter.
-On Linux systems the available docker IP's appear:
+In the first step, we made a remote connection to a database in our Docker-Container, type `c` &#x279c; enter.
+On Linux systems the available Docker IP's appear:
 
 <pre style="background-color:black; color:white"><code>Please select Database-Server or enter IP address:  (e.g. "172.17.0.3")
 
-Available servers from docker:
+Available servers from Docker:
 0: 172.17.0.3:china
 1: 172.17.0.2:eu
 2: 172.17.0.4:usa
 </code></pre>
 
-Now you can choose to which of the three databases you want connect to.
-When you input `2` the application will connect to the usa docker-container with the IP-Address: 172.17.0.4.
+Now you can choose to which of the three databases you want to connect.
+When you input `2` the application will connect to the usa Docker-Container with the IP-Address: 172.17.0.4.
 
 Lets look in the source code of the method <tt>connection()</tt> in <tt>Manager.java</tt>:
 
-To make a connection over IP to a database we use the keyword `remote:`. For authentication, we use the user `root` and the password `root`. If you have choosen an other password, by setting up the docker-container you have to change it here accordingly. 
+To make a connection over IP to a database we use the keyword `remote:`. For authentication, we use the user `root` and the password `root`. If you have choosen another password, by setting up the Docker-Container you have to change it here accordingly. 
 
 ```java
 // OPEN THE DATABASE
@@ -38,7 +38,7 @@ String sDBName = "WebShopDB";
 OObjectDatabaseTx db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root"); 
 ```	
 	
-The first time a exception will be thrown, because the database doesn't exists. So we have to check this behaviour before we open the database:  
+The first time an exception will be thrown, since the database doesn't exists. So we have to check this behaviour before we open the database:  
 
 ```java				
 // CREATE A SERVER ADMIN CLIENT AGAINST A REMOTE SERVER TO CHECK IF DB EXISTS				
@@ -59,7 +59,7 @@ oSAdmin.close();
 OObjectDatabaseTx db = new OObjectDatabaseTx("remote:"+sIP+"/"+sDBName).open("root","root");
 ```	
 
- After the generation of the database was successfully, the method creates the clusters for the class Customer dynamically for each configured server, one.  
+After the generation of the database was successfull, the method creates the clusters for the class Customer dynamically for each configured server, one.  
 
 ```java
 //create clusters
