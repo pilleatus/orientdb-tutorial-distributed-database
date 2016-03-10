@@ -20,5 +20,5 @@ https://github.com/orientechnologies/orientdb/issues/4891
 * <font color="red">Error on creating cluster on distributed nodes: ids are different</font>  
 https://github.com/orientechnologies/orientdb/issues/4767
 
-This WARNING/ERROR disappears after some seconds.
+  This WARNING/ERROR disappears after some seconds.
 
