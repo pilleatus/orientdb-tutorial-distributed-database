@@ -16,3 +16,6 @@ https://github.com/orientechnologies/orientdb/issues/4891
 ```bash
 -Ddistributed.backupDirectory="/orientdb/backup"
 ```
+
+* <font color="red">Error on creating cluster on distributed nodes: ids are different</font>
+
