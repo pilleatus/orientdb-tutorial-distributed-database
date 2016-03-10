@@ -12,7 +12,7 @@ With version 2.1.10 the following errors occurred under developing this tutorial
 * <font color="red">error on moving existent database fails because of restricted access to database parent folder</font>  
 https://github.com/orientechnologies/orientdb/issues/4891
 
-  To avoid this error, we added a Paramter to the file `server.sh`
+  To avoid this error, we added a paramter to the file `server.sh`
 ```bash
 -Ddistributed.backupDirectory="/orientdb/backup"
 ```
