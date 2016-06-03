@@ -9,7 +9,7 @@ First of all we will create an image for a DDBMS-Server. Later it is possible to
 ####Dockerfile:
 ```bash
 #FROM orientdb/orientdb:latest
-FROM orientdb/orientdb:2.1.5
+FROM orientdb/orientdb:2.1.9
 
 COPY ./default-distributed-db-config.json /orientdb/config/default-distributed-db-config.json
 COPY ./server.sh /orientdb/bin/server.sh
